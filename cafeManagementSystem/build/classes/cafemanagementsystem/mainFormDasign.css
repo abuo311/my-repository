@@ -1,0 +1,95 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 14, 2024, 2:47:23 PM
+    Author     : ABUO BERNARD
+*/
+
+.header{
+    -fx-background-color: linear-gradient(to bottom right,#0c148a,#6456f7);
+    -fx-border-color: #fff;
+    -fx-border-width: 0 0 .8px 0; 
+}
+.nav-form{
+    -fx-background-color: linear-gradient(to bottom right,#152ee8,#596ad7);
+}
+.nav-btn{
+    -fx-background-color: transparent;
+    -fx-border-color: #fff;
+    -fx-border-width: 1px;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+    -fx-font-size:14px;
+    -fx-border-radius: 10px;
+    -fx-text-alignment: left;
+
+}
+.nav-btn:hover{
+    -fx-background-color: #fcb215;
+}
+.sign-out{
+    -fx-background-color: #08aaa8;
+    -fx-background-radius: 50px;
+    -fx-padding: 5px;
+    -fx-cursor: hand;  
+}
+.sign-out:hover{
+    -fx-background-color: #fcb215;
+}
+.shadow{
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.5), 5,0,0,0);
+}
+.white-bg{
+    -fx-background-color: #fff;
+}
+.radius{
+    -fx-background-radius: 10px;
+}
+.table-view{
+    -fx-background-color: transparent;
+    -fx-border-color: linear-gradient(to bottom right,#152ee8,#596ad7);
+    -fx-padding: 0;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1.5px;
+    -fx-text-alignment: center;
+
+}
+.table-view .table-column{
+    -fx-alignment: CENTER;
+}
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(to bottom right,#152ee8,#596ad7);
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 5px 5px 0 0;
+}
+.table-view .column-header, filter{
+    -fx-background-color: transparent;
+    -fx-size:45px;
+}
+.table-view .column-header .label{
+    -fx-text-fill: #fff;
+}
+.btn{
+    -fx-background-color: linear-gradient(to bottom right,#0c148a,#6456f7);
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+    -fx-font-Size:14px;
+    -fx-background-radius: 50px;
+}
+.btn:hover{
+    -fx-background-color: linear-gradient(to bottom right,#0c148a,#7c70ff);
+}
+.textfield{
+    -fx-background-color: transparent;
+    -fx-border-color: linear-gradient(to bottom right,#4866fc,#5167d3);
+    -fx-border-width: .5px;
+    -fx-border-radius: 5px;
+}
+.textfield:focused{
+    -fx-border-width: 1px;
+    -fx-border-color:  #fcb215;
+    
+}

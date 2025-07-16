@@ -1,0 +1,55 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+*/
+/* and open the template in the editor.
+
+    Created on : Mar 13, 2024, 7:35:44 PM
+    Author     : ABUO BERNARD
+*/
+
+.gradient{
+    -fx-background-color: linear-gradient(to bottom right,#152ee8,#596ad7);
+}
+.white-form{
+    -fx-background-color: #fff;
+}
+.head-label{
+    -fx-border-color: #596ad7;
+    -fx-border-width: 0 0 0 3px;
+    -fx-padding: 0 0 0 5px;
+}
+.login-Btn{
+    -fx-background-color: linear-gradient(to bottom right,#2f48e8,#1e32a1);
+    -fx-border-radius: 5px;
+    -fx-cursor: hand;
+    -fx-text-fill: #fff;
+    -fx-font-size:14px;
+    -fx-background-radius: 50px;
+    
+}
+.login-Btn:hover{
+        -fx-background-color: linear-gradient(to bottom right,#4866fc,#5167d3);
+}
+.textfield{
+    -fx-background-color: transparent;
+    -fx-border-color: linear-gradient(to bottom right,#152ee8,#596ad7);
+    -fx-border-width: .5px;
+    -fx-border-radius: 5px;
+}
+.textfield:focused{
+    -fx-border-width: 1px;
+}
+.create-btn{
+    -fx-background-color: transparent;
+    -fx-text-fill: #fff;
+    -fx-cursor: hand;
+    -fx-border-color: #fff;
+    -fx-border-width: 1px;
+    -fx-background-radius: 50px;
+    -fx-border-radius: 50px;
+}
+.create-btn:hover{
+    -fx-background-color: #fff;
+    -fx-text-fill: #000; 
+}
