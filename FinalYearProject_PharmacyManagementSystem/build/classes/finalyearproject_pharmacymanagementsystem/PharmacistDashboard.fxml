@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalyearproject_pharmacymanagementsystem.PharmacistDashboardController">
+    <children>
+        <AnchorPane fx:id="main_form" prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <BorderPane prefHeight="700.0" prefWidth="1124.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <top>
+                        <AnchorPane prefHeight="40.0" prefWidth="1124.0" style="-fx-background-color: indigo; -fx-border-color: #fff;" BorderPane.alignment="CENTER">
+                            <children>
+                                <Button layoutX="1066.0" layoutY="1.0" mnemonicParsing="false" onAction="#close" prefHeight="37.0" prefWidth="57.0" styleClass="close" stylesheets="@../Styling/DashboardStyle.css">
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="1.3em" />
+                                    </graphic>
+                                </Button>
+                                <Button layoutX="1010.0" layoutY="1.0" mnemonicParsing="false" onAction="#minimize" prefHeight="37.0" prefWidth="57.0" styleClass="minimize" stylesheets="@../Styling/DashboardStyle.css">
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="MINUS" size="1.3em" />
+                                    </graphic>
+                                </Button>
+                                <FontAwesomeIcon fill="#f8f8f8" glyphName="STETHOSCOPE" layoutX="5.0" layoutY="29.0" size="2em" />
+                        <Label layoutX="354.0" layoutY="2.0" text="Pharmacist Portal" textFill="WHITE">
+                           <font>
+                              <Font name="SansSerif Italic" size="32.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="29.0" layoutY="1.0" text="Welcome to Minamo Pharmacy" textFill="WHITE">
+                           <font>
+                              <Font name="American Captain" size="30.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="341.0" layoutY="-6.0" text="|" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="31.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="clockLabel" alignment="CENTER" layoutX="656.0" layoutY="1.0" prefHeight="17.0" prefWidth="152.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                            </children>
+                        </AnchorPane>
+                    </top>
+                    <center>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                            <children>
+                                <AnchorPane prefHeight="660.0" prefWidth="899.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <AnchorPane fx:id="dashboard_form" layoutX="14.0" layoutY="14.0" prefHeight="634.0" prefWidth="873.0" stylesheets="@../Styling/DashboardStyle.css" visible="false">
+                                            <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <children>
+                                                <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="185.0" prefWidth="845.0" stylesheets="@../Styling/DashboardStyle.css">
+                                                    <styleClass>
+                                                        <String fx:value="white-bg" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                    <children>
+                                                        <AnchorPane layoutX="3.0" layoutY="14.0" prefHeight="157.0" prefWidth="212.0" styleClass="cart2" stylesheets="@../Styling/DashboardStyle.css" />
+                                                        <AnchorPane layoutX="217.0" layoutY="14.0" prefHeight="157.0" prefWidth="212.0" styleClass="cart3" stylesheets="@../Styling/DashboardStyle.css" />
+                                                        <AnchorPane layoutX="432.0" layoutY="14.0" prefHeight="157.0" prefWidth="212.0" styleClass="cart2" stylesheets="@../Styling/DashboardStyle.css" />
+                                                        <AnchorPane layoutX="647.0" layoutY="13.0" prefHeight="157.0" prefWidth="196.0" styleClass="cart3" stylesheets="@../Styling/DashboardStyle.css" />
+                                                    </children>
+                                                </AnchorPane>
+                                                <PieChart layoutX="37.0" layoutY="220.0" prefHeight="400.0" prefWidth="403.0" title="Income Chart" />
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane fx:id="inventory_form" layoutX="14.0" layoutY="14.0" prefHeight="637.0" prefWidth="875.0" stylesheets="@../Styling/DashboardStyle.css" visible="false">
+                                            <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <children>
+                                                <AnchorPane layoutX="12.0" layoutY="11.0" prefHeight="259.0" prefWidth="850.0" style="-fx-border-color: indigo;" stylesheets="@../Styling/DashboardStyle.css">
+                                                    <children>
+                                                        <JFXTextField fx:id="stock" labelFloat="true" layoutX="23.0" layoutY="150.0" prefHeight="31.0" prefWidth="192.0" promptText="Stock" unFocusColor="#219015">
+                                                            <font>
+                                                                <Font size="15.0" />
+                                                            </font>
+                                                        </JFXTextField>
+                                                        <JFXComboBox fx:id="med_id" focusColor="#8da9f0" labelFloat="true" layoutX="23.0" layoutY="20.0" onAction="#inventoryMedicationId" onMouseClicked="#inventoryMedicationId" prefHeight="33.0" prefWidth="199.0" promptText="Medication ID" style="-fx-font-size: 15px;" unFocusColor="#099a1e" />
+                                                        <JFXTextField fx:id="reorder_level" focusColor="#e2e6f5" labelFloat="true" layoutX="245.0" layoutY="23.0" prefHeight="31.0" prefWidth="192.0" promptText="Reorder Level" unFocusColor="#219015">
+                                                            <font>
+                                                                <Font size="15.0" />
+                                                            </font>
+                                                        </JFXTextField>
+                                                        <JFXDatePicker fx:id="date_for_updates" layoutX="252.0" layoutY="84.0" prefHeight="32.0" prefWidth="203.0" promptText="Date for Updates" style="-fx-font-size: 15px;" />
+                                                        <JFXTextField fx:id="lot_number" labelFloat="true" layoutX="245.0" layoutY="150.0" prefHeight="31.0" prefWidth="192.0" promptText="Lot Number" unFocusColor="#219015">
+                                                            <font>
+                                                                <Font size="15.0" />
+                                                            </font>
+                                                        </JFXTextField>
+                                                        <JFXButton fx:id="invent_save_btn" graphicTextGap="10.0" layoutX="585.0" layoutY="66.0" onAction="#inventorySave" prefHeight="33.0" prefWidth="121.0" styleClass="add-btn" stylesheets="@../Styling/DashboardStyle.css" text="Save">
+                                                            <graphic>
+                                                                <FontAwesomeIcon fill="WHITE" glyphName="SAVE" size="1.3em" />
+                                                            </graphic>
+                                                        </JFXButton>
+                                                        <JFXButton fx:id="invent_edit_btn" graphicTextGap="10.0" layoutX="584.0" layoutY="118.0" onAction="#inventoryRestock" prefHeight="33.0" prefWidth="121.0" styleClass="update-btn" stylesheets="@../Styling/DashboardStyle.css" text="Restock">
+                                                            <graphic>
+                                                                <FontAwesomeIcon fill="WHITE" glyphName="EDIT" size="1.3em" />
+                                                            </graphic>
+                                                        </JFXButton>
+                                                        <JFXButton fx:id="invent_reset_btn" graphicTextGap="10.0" layoutX="585.0" layoutY="213.0" onAction="#inventoryReset" prefHeight="33.0" prefWidth="121.0" styleClass="clear-btn" stylesheets="@../Styling/DashboardStyle.css" text="Reset">
+                                                            <graphic>
+                                                                <FontAwesomeIcon fill="WHITE" glyphName="ERASER" size="1.3em" />
+                                                            </graphic>
+                                                        </JFXButton>
+                                                        <JFXButton fx:id="invent_delete_btn" graphicTextGap="10.0" layoutX="585.0" layoutY="168.0" onAction="#inventoryDelete" prefHeight="33.0" prefWidth="121.0" styleClass="delete-btn" stylesheets="@../Styling/DashboardStyle.css" text="Delete">
+                                                            <graphic>
+                                                                <FontAwesomeIcon fill="WHITE" glyphName="TRASH" size="1.3em" />
+                                                            </graphic>
+                                                        </JFXButton>
+                                          <JFXComboBox fx:id="med_name" focusColor="#8da9f0" labelFloat="true" layoutX="23.0" layoutY="83.0" prefHeight="33.0" prefWidth="199.0" promptText="Medication Name" style="-fx-font-size: 15px;" unFocusColor="#099a1e" />
+                                          <JFXTextField fx:id="restock" labelFloat="true" layoutX="22.0" layoutY="214.0" prefHeight="31.0" prefWidth="192.0" promptText="Restock" unFocusColor="#219015">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </JFXTextField>
+                                                    </children>
+                                       <styleClass>
+                                          <String fx:value="shadow" />
+                                          <String fx:value="white-bg" />
+                                       </styleClass>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="12.0" layoutY="280.0" prefHeight="348.0" prefWidth="850.0" stylesheets="@../Styling/DashboardStyle.css">
+                                                    <styleClass>
+                                                        <String fx:value="white-bg" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                    <children>
+                                                        <TableView fx:id="inventory_tableView" layoutX="8.0" layoutY="9.0" onMouseClicked="#selectInventory" prefHeight="332.0" prefWidth="834.0" tableMenuButtonVisible="true" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="9.0">
+                                                            <columns>
+                                                                <TableColumn fx:id="invent_col_id" prefWidth="86.0" text="ID" />
+                                                <TableColumn fx:id="invent_col_med_id" prefWidth="118.0" text="Medication ID" />
+                                                                <TableColumn fx:id="invent_col_med_name" prefWidth="138.0" text="Medication Name" />
+                                                                <TableColumn fx:id="invent_col_stock" prefWidth="84.0" text="Stock" />
+                                                                <TableColumn fx:id="invent_col_reoreder_level" prefWidth="129.0" text="Reorder Level" />
+                                                                <TableColumn fx:id="invent_col_date_for_update" prefWidth="153.0" text="Date for Updation" />
+                                                <TableColumn fx:id="invent_col_lot_number" prefWidth="119.0" text="Lot Number" />
+                                                            </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                                        </TableView>
+                                                    </children>
+                                                </AnchorPane>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane fx:id="patient_form" layoutX="14.0" layoutY="14.0" prefHeight="635.0" prefWidth="873.0" stylesheets="@../Styling/DashboardStyle.css" visible="false">
+                                            <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <children>
+                                                <AnchorPane layoutX="11.0" layoutY="14.0" prefHeight="261.0" prefWidth="850.0" style="-fx-border-color: indigo;" stylesheets="@../Styling/DashboardStyle.css">
+                                                    <styleClass>
+                                                        <String fx:value="white-bg" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                    <children>
+                                                        <JFXTextField fx:id="pat_first_name" labelFloat="true" layoutX="14.0" layoutY="79.0" prefHeight="31.0" prefWidth="205.0" promptText="First Name" />
+                                                        <JFXTextField fx:id="pat_last_name" labelFloat="true" layoutX="14.0" layoutY="127.0" prefHeight="31.0" prefWidth="205.0" promptText=" Surname" />
+                                                        <JFXDatePicker fx:id="pat_date_of_birth" layoutX="14.0" layoutY="173.0" prefHeight="30.0" prefWidth="205.0" promptText="Date of Birth" />
+                                                        <JFXComboBox fx:id="pat_gender" labelFloat="true" layoutX="14.0" layoutY="220.0" prefHeight="33.0" prefWidth="203.0" promptText="Gender" />
+                                                        <JFXTextField fx:id="pat_address" labelFloat="true" layoutX="230.0" layoutY="22.0" prefHeight="31.0" prefWidth="205.0" promptText="Address" />
+                                                        <JFXTextField fx:id="pat_phone_number" labelFloat="true" layoutX="235.0" layoutY="78.0" prefHeight="31.0" prefWidth="205.0" promptText="Phone Number" />
+                                                        <JFXTextField fx:id="pat_insurance_provider" labelFloat="true" layoutX="235.0" layoutY="124.0" prefHeight="31.0" prefWidth="205.0" promptText="Insurance Provider" />
+                                                        <JFXTextField fx:id="pat_insurance_policy_number" labelFloat="true" layoutX="237.0" layoutY="170.0" prefHeight="31.0" prefWidth="205.0" promptText="Insurance Policy Number" />
+                                                        <JFXTextArea fx:id="pat_allergy" labelFloat="true" layoutX="237.0" layoutY="211.0" prefHeight="41.0" prefWidth="208.0" promptText="Allergy" />
+                                                        <JFXTextArea fx:id="pat_medical_history" labelFloat="true" layoutX="452.0" layoutY="13.0" prefHeight="41.0" prefWidth="208.0" promptText="Medical History" />
+                                                        <JFXTextField fx:id="pat_emergency_contact_name" labelFloat="true" layoutX="454.0" layoutY="68.0" prefHeight="31.0" prefWidth="205.0" promptText="Emergency Contact Name" />
+                                                        <JFXTextField fx:id="pat_emergency_contact_number" labelFloat="true" layoutX="456.0" layoutY="114.0" prefHeight="31.0" prefWidth="205.0" promptText="Emergency Contact Number" />
+                                                        <JFXButton fx:id="pat_save_btn" graphicTextGap="10.0" layoutX="708.0" layoutY="42.0" onAction="#patientSave" prefHeight="33.0" prefWidth="117.0" styleClass="add-btn" stylesheets="@../Styling/DashboardStyle.css" text="Save">
+                                                            <graphic>
+                                                                <FontAwesomeIcon fill="WHITE" glyphName="SAVE" size="1.3em" />
+                                                            </graphic>
+                                                        </JFXButton>
+                                                        <JFXButton fx:id="pat_edit_btn" graphicTextGap="10.0" layoutX="709.0" layoutY="97.0" onAction="#patientUpdate" prefHeight="33.0" prefWidth="117.0" styleClass="update-btn" stylesheets="@../Styling/DashboardStyle.css" text="Edit">
+                                                            <graphic>
+                                                                <FontAwesomeIcon fill="WHITE" glyphName="EDIT" size="1.3em" />
+                                                            </graphic>
+                                                        </JFXButton>
+                                                        <JFXButton fx:id="pat_delete_btn" graphicTextGap="10.0" layoutX="709.0" layoutY="151.0" onAction="#patientDelete" prefHeight="33.0" prefWidth="117.0" styleClass="delete-btn" stylesheets="@../Styling/DashboardStyle.css" text="Delete">
+                                                            <graphic>
+                                                                <FontAwesomeIcon fill="WHITE" glyphName="TRASH" size="1.3em" />
+                                                            </graphic>
+                                                        </JFXButton>
+                                                        <JFXButton fx:id="pat_reset_btn" graphicTextGap="10.0" layoutX="709.0" layoutY="203.0" onAction="#patientReset" prefHeight="33.0" prefWidth="117.0" styleClass="clear-btn" stylesheets="@../Styling/DashboardStyle.css" text="Reset">
+                                                            <graphic>
+                                                                <FontAwesomeIcon fill="WHITE" glyphName="ERASER" size="1.3em" />
+                                                            </graphic>
+                                                        </JFXButton>
+                                          <JFXTextField fx:id="pat_id" labelFloat="true" layoutX="12.0" layoutY="22.0" prefHeight="31.0" prefWidth="205.0" promptText="Patient ID" />
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="12.0" layoutY="283.0" prefHeight="339.0" prefWidth="850.0" stylesheets="@../Styling/DashboardStyle.css">
+                                                    <styleClass>
+                                                        <String fx:value="white-bg" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                    <children>
+                                                        <ScrollPane layoutX="5.0" layoutY="5.0" prefHeight="330.0" prefWidth="970.0" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="5.0">
+                                                            <content>
+                                                                <TableView fx:id="patient_tableView" onMouseClicked="#selectPatient" prefHeight="326.0" prefWidth="1800.0" tableMenuButtonVisible="true">
+                                                                    <columns>
+                                                      <TableColumn fx:id="pat_col_id" maxWidth="6000.0" prefWidth="100.0" text="Patient ID" />
+                                                                        <TableColumn fx:id="pat_col_first_name" prefWidth="100.0" text="First Name" />
+                                                                        <TableColumn fx:id="pat_col_last_name" prefWidth="100.0" text="Surname" />
+                                                                        <TableColumn fx:id="pat_col_date_of_birth" prefWidth="120.0" text="Date of birth" />
+                                                                        <TableColumn fx:id="pat_col_gender" prefWidth="100.0" text="Gender" />
+                                                                        <TableColumn fx:id="pat_col_address" prefWidth="110.0" text="Address" />
+                                                                        <TableColumn fx:id="pat_col_phone_number" prefWidth="120.0" text="Phone Number" />
+                                                                        <TableColumn fx:id="pat_col_insurance_provider" prefWidth="150.0" text="Insurance Provider" />
+                                                                        <TableColumn fx:id="pat_col_insurance_policy_number" prefWidth="200.0" text="Insurance Policy Number" />
+                                                                        <TableColumn fx:id="pat_col_allergy" prefWidth="110.0" text="Allergy" />
+                                                                        <TableColumn fx:id="pat_col_medical_history" prefWidth="120.0" text="Medical history" />
+                                                                        <TableColumn fx:id="pat_col_emergency_contact_name" prefWidth="220.0" text="Emergency Contact Name" />
+                                                                        <TableColumn fx:id="pat_col_emergency_contact_number" maxWidth="16000.0" prefWidth="220.0" text="Emergency Contact Number" />
+                                                                    </columns>
+                                                   <columnResizePolicy>
+                                                      <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                   </columnResizePolicy>
+                                                                </TableView>
+                                                            </content>
+                                                        </ScrollPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane fx:id="doctor_form" layoutX="15.0" layoutY="14.0" prefHeight="635.0" prefWidth="873.0" stylesheets="@../Styling/DashboardStyle.css" visible="false">
+                                            <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <children>
+                                                <AnchorPane layoutX="11.0" layoutY="12.0" prefHeight="261.0" prefWidth="850.0" stylesheets="@../Styling/DashboardStyle.css">
+                                                    <styleClass>
+                                                        <String fx:value="white-bg" />
+                                                        <String fx:value="shadow" />
+                                                        <String fx:value="semi-top-form" />
+                                                    </styleClass>
+                                                    <children>
+                                                        <JFXTextField fx:id="doc_first_name" labelFloat="true" layoutX="14.0" layoutY="71.0" prefHeight="31.0" prefWidth="205.0" promptText="First Name" />
+                                                        <JFXTextField fx:id="doc_surname" labelFloat="true" layoutX="14.0" layoutY="118.0" prefHeight="31.0" prefWidth="205.0" promptText=" Surname" />
+                                                        <JFXTextField fx:id="doc_phone_number" labelFloat="true" layoutX="234.0" layoutY="17.0" prefHeight="31.0" prefWidth="205.0" promptText="Phone Number" />
+                                                        <JFXTextField fx:id="doc_license_number" labelFloat="true" layoutX="235.0" layoutY="67.0" prefHeight="31.0" prefWidth="205.0" promptText="License Number" />
+                                                        <JFXTextField fx:id="doc_specialisation" labelFloat="true" layoutX="11.0" layoutY="163.0" prefHeight="31.0" prefWidth="205.0" promptText="Specialisation " />
+                                                        <JFXTextArea fx:id="doc_clinic_address" labelFloat="true" layoutX="13.0" layoutY="213.0" prefHeight="41.0" prefWidth="208.0" promptText="Clinic Address" />
+                                                        <JFXButton fx:id="doc_save_btn" graphicTextGap="10.0" layoutX="609.0" layoutY="42.0" onAction="#doctorSave" prefHeight="33.0" prefWidth="117.0" styleClass="add-btn" stylesheets="@../Styling/DashboardStyle.css" text="Save">
+                                                            <graphic>
+                                                                <FontAwesomeIcon fill="WHITE" glyphName="SAVE" size="1.3em" />
+                                                            </graphic>
+                                                        </JFXButton>
+                                                        <JFXButton fx:id="doc_edit_btn" graphicTextGap="10.0" layoutX="610.0" layoutY="97.0" onAction="#doctorUpdate" prefHeight="33.0" prefWidth="117.0" styleClass="update-btn" stylesheets="@../Styling/DashboardStyle.css" text="Edit">
+                                                            <graphic>
+                                                                <FontAwesomeIcon fill="WHITE" glyphName="EDIT" size="1.3em" />
+                                                            </graphic>
+                                                        </JFXButton>
+                                                        <JFXButton fx:id="doc_delete_btn" graphicTextGap="10.0" layoutX="610.0" layoutY="151.0" onAction="#doctorDelete" prefHeight="33.0" prefWidth="117.0" styleClass="delete-btn" stylesheets="@../Styling/DashboardStyle.css" text="Delete">
+                                                            <graphic>
+                                                                <FontAwesomeIcon fill="WHITE" glyphName="TRASH" size="1.3em" />
+                                                            </graphic>
+                                                        </JFXButton>
+                                                        <JFXButton fx:id="doc_reset_btn" graphicTextGap="10.0" layoutX="610.0" layoutY="203.0" onAction="#resetDoctor" prefHeight="33.0" prefWidth="117.0" styleClass="clear-btn" stylesheets="@../Styling/DashboardStyle.css" text="Reset">
+                                                            <graphic>
+                                                                <FontAwesomeIcon fill="WHITE" glyphName="ERASER" size="1.3em" />
+                                                            </graphic>
+                                                        </JFXButton>
+                                          <JFXTextField fx:id="doc_id" labelFloat="true" layoutX="16.0" layoutY="21.0" prefHeight="31.0" prefWidth="205.0" promptText="Doctor ID" />
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="12.0" layoutY="283.0" prefHeight="339.0" prefWidth="850.0" stylesheets="@../Styling/DashboardStyle.css">
+                                                    <styleClass>
+                                                        <String fx:value="white-bg" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                    <children>
+                                                        <TableView fx:id="doctor_tableView" layoutX="12.0" layoutY="12.0" onMouseClicked="#selectDoctor" prefHeight="316.0" prefWidth="822.0" tableMenuButtonVisible="true">
+                                                            <columns>
+                                                                <TableColumn fx:id="doc_col_id" prefWidth="96.0" text="Doctor ID" />
+                                                                <TableColumn fx:id="doc_col_first_name" prefWidth="103.0" text="First Name" />
+                                                                <TableColumn fx:id="doc_col_surname" prefWidth="130.0" text="Surname" />
+                                                                <TableColumn fx:id="doc_col_specialisation" prefWidth="115.0" text="Specialisation" />
+                                                                <TableColumn fx:id="doc_col_clinic_address" prefWidth="140.0" text="Clinic Address" />
+                                                                <TableColumn fx:id="doc_col_phone_number" prefWidth="93.0" text="Phone Number" />
+                                                                <TableColumn fx:id="doc_col_license_number" prefWidth="115.0" text="License Number" />
+                                                            </columns>
+                                                            <columnResizePolicy>
+                                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                            </columnResizePolicy>
+                                                        </TableView>
+                                                    </children>
+                                                </AnchorPane>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane fx:id="prescription_form" layoutX="13.0" layoutY="13.0" prefHeight="635.0" prefWidth="873.0" stylesheets="@../Styling/DashboardStyle.css" visible="false">
+                                            <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <children>
+                                                <AnchorPane layoutX="11.0" layoutY="12.0" prefHeight="261.0" prefWidth="850.0" stylesheets="@../Styling/DashboardStyle.css">
+                                                    <styleClass>
+                                                        <String fx:value="white-bg" />
+                                                        <String fx:value="shadow" />
+                                                        <String fx:value="semi-top-form" />
+                                                    </styleClass>
+                                                    <children>
+                                                        <JFXTextField fx:id="pres_qty" labelFloat="true" layoutX="356.0" layoutY="24.0" prefHeight="31.0" prefWidth="205.0" promptText="Quantity Prescribed">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </JFXTextField>
+                                                        <JFXButton graphicTextGap="10.0" layoutX="701.0" layoutY="42.0" onAction="#savePrescription" prefHeight="33.0" prefWidth="117.0" styleClass="add-btn" stylesheets="@../Styling/DashboardStyle.css" text="Save">
+                                                            <graphic>
+                                                                <FontAwesomeIcon fill="WHITE" glyphName="SAVE" size="1.3em" />
+                                                            </graphic>
+                                                        </JFXButton>
+                                                        <JFXButton graphicTextGap="10.0" layoutX="702.0" layoutY="97.0" onAction="#updatePrescription" prefHeight="33.0" prefWidth="117.0" styleClass="update-btn" stylesheets="@../Styling/DashboardStyle.css" text="Edit">
+                                                            <graphic>
+                                                                <FontAwesomeIcon fill="WHITE" glyphName="EDIT" size="1.3em" />
+                                                            </graphic>
+                                                        </JFXButton>
+                                                        <JFXButton graphicTextGap="10.0" layoutX="702.0" layoutY="151.0" onAction="#deletePrescription" prefHeight="33.0" prefWidth="117.0" styleClass="delete-btn" stylesheets="@../Styling/DashboardStyle.css" text="Delete">
+                                                            <graphic>
+                                                                <FontAwesomeIcon fill="WHITE" glyphName="TRASH" size="1.3em" />
+                                                            </graphic>
+                                                        </JFXButton>
+                                                        <JFXButton graphicTextGap="10.0" layoutX="702.0" layoutY="203.0" onAction="#clearPrescriptionFields" prefHeight="33.0" prefWidth="117.0" styleClass="clear-btn" stylesheets="@../Styling/DashboardStyle.css" text="Clear">
+                                                            <graphic>
+                                                                <FontAwesomeIcon fill="WHITE" glyphName="ERASER" size="1.3em" />
+                                                            </graphic>
+                                                        </JFXButton>
+                                                        <JFXComboBox fx:id="pres_pat_id" labelFloat="true" layoutX="13.0" layoutY="89.0" prefHeight="33.0" prefWidth="207.0" promptText="Patient ID" />
+                                                        <JFXComboBox fx:id="pres_med_id" labelFloat="true" layoutX="13.0" layoutY="138.0" prefHeight="33.0" prefWidth="207.0" promptText="Medicine ID" />
+                                                        <JFXComboBox fx:id="pres_doc_id" labelFloat="true" layoutX="15.0" layoutY="179.0" prefHeight="33.0" prefWidth="207.0" promptText="Doctor ID" />
+                                                        <JFXDatePicker fx:id="pres_date" layoutX="15.0" layoutY="222.0" prefHeight="32.0" prefWidth="207.0" promptText="Prescriptions Date" />
+                                                        <JFXTextArea fx:id="pres_instructions" labelFloat="true" layoutX="358.0" layoutY="79.0" prefHeight="55.0" prefWidth="217.0" promptText="Instructions">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </JFXTextArea>
+                                                        <JFXTextArea fx:id="pres_pharmacist" labelFloat="true" layoutX="355.0" layoutY="199.0" prefHeight="55.0" prefWidth="214.0" promptText="Pharmacist Note">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </JFXTextArea>
+                                                        <JFXTextField fx:id="pres_diagnosis" labelFloat="true" layoutX="356.0" layoutY="153.0" prefHeight="31.0" prefWidth="205.0" promptText="Diagnosis">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </JFXTextField>
+                                          <JFXTextField fx:id="pres_id" labelFloat="true" layoutX="12.0" layoutY="23.0" prefHeight="31.0" prefWidth="205.0" promptText="Prescription ID">
+                                             <font>
+                                                <Font size="14.0" />
+                                             </font>
+                                          </JFXTextField>
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="12.0" layoutY="283.0" prefHeight="339.0" prefWidth="850.0" stylesheets="@../Styling/DashboardStyle.css">
+                                                    <styleClass>
+                                                        <String fx:value="white-bg" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                    <children>
+                                                        <ScrollPane layoutX="14.0" layoutY="33.0" prefHeight="303.0" prefWidth="840.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="-4.0" AnchorPane.topAnchor="33.0">
+                                                            <content>
+                                                                <TableView fx:id="prescription_tableView" onMouseClicked="#selectPrescription" prefHeight="361.0" prefWidth="1150.0" tableMenuButtonVisible="true">
+                                                                    <columns>
+                                                                        <TableColumn fx:id="pres_col_pres_id" prefWidth="96.0" text="Prescription ID" />
+                                                                        <TableColumn fx:id="pres_col_pat_id" prefWidth="97.0" text="Patient ID" />
+                                                                        <TableColumn fx:id="pres_col_med_id" prefWidth="157.0" text="Medicine ID" />
+                                                                        <TableColumn fx:id="pres_col_doc_id" prefWidth="82.0" text="Doctor ID" />
+                                                                        <TableColumn fx:id="pres_col_pres_date" prefWidth="172.0" text="Prescription Date" />
+                                                                        <TableColumn fx:id="pres_col_qty" prefWidth="152.0" text="Quantity Prescribed" />
+                                                                        <TableColumn fx:id="pres_col_instructions" prefWidth="115.0" text="Instructions" />
+                                                                        <TableColumn fx:id="pres_col_diagnosis" prefWidth="115.0" text="Diagnosis" />
+                                                                        <TableColumn fx:id="pres_col_pharmacist_note" prefWidth="115.0" text="Pharmacist Note" />
+                                                                    </columns>
+                                                                    <columnResizePolicy>
+                                                                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                                    </columnResizePolicy>
+                                                                </TableView>
+                                                            </content>
+                                                        </ScrollPane>
+                                                        <TextField fx:id="pres_search" layoutX="18.0" layoutY="2.0" prefHeight="30.0" prefWidth="220.0" promptText="Search Here ...." styleClass="search" stylesheets="@../Styling/DashboardStyle.css">
+                                                            <font>
+                                                                <Font size="14.0" />
+                                                            </font>
+                                                        </TextField>
+                                                        <FontAwesomeIcon glyphName="SEARCH" layoutX="27.0" layoutY="23.0" size="1.3em" />
+                                                    </children>
+                                                </AnchorPane>
+                                            </children>
+                                        </AnchorPane>
+                                        <AnchorPane fx:id="sale_form" layoutX="15.0" layoutY="13.0" prefHeight="635.0" prefWidth="873.0" stylesheets="@../Styling/DashboardStyle.css">
+                                            <styleClass>
+                                                <String fx:value="white-bg" />
+                                                <String fx:value="shadow" />
+                                            </styleClass>
+                                            <children>
+                                                <AnchorPane layoutX="11.0" layoutY="12.0" prefHeight="610.0" prefWidth="521.0" stylesheets="@../Styling/DashboardStyle.css">
+                                                    <styleClass>
+                                                        <String fx:value="white-bg" />
+                                                        <String fx:value="shadow" />
+                                                        <String fx:value="semi-top-form" />
+                                                    </styleClass>
+                                                    <children>
+                                                        <TableView fx:id="sale_tableView" layoutX="14.0" layoutY="14.0" prefHeight="585.0" prefWidth="499.0" tableMenuButtonVisible="true">
+                                                            <columns>
+                                                                <TableColumn fx:id="sale_pat_col_id" prefWidth="75.0" text="Patient ID" />
+                                                                <TableColumn fx:id="sale_presc_col_id" prefWidth="75.0" text="Presc ID" />
+                                                                <TableColumn fx:id="sale_phar_col_id" prefWidth="75.0" text="Phar ID" />
+                                                                <TableColumn fx:id="sale_col_payment_method" prefWidth="75.0" text="Payment Method" />
+                                                                <TableColumn fx:id="sale_col_total_amount" prefWidth="75.0" text="Total Amount" />
+                                                                <TableColumn fx:id="sale_col_qty" prefWidth="75.0" text="Quantity" />
+                                                            </columns>
+                                                            <columnResizePolicy>
+                                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                            </columnResizePolicy>
+                                                        </TableView>
+                                                    </children>
+                                                </AnchorPane>
+                                                <AnchorPane layoutX="550.0" layoutY="13.0" prefHeight="609.0" prefWidth="312.0" style="-fx-border-color: indigo; -fx-border-width: 5px;" stylesheets="@../Styling/DashboardStyle.css">
+                                                    <styleClass>
+                                                        <String fx:value="white-bg" />
+                                                        <String fx:value="shadow" />
+                                                        <String fx:value="top-form" />
+                                                    </styleClass>
+                                       <children>
+                                          <JFXComboBox fx:id="sale_pat_id" focusColor="#a931b2" layoutX="26.0" layoutY="31.0" prefHeight="33.0" prefWidth="258.0" promptText="Patient ID" />
+                                          <JFXComboBox fx:id="sale_presc_id" layoutX="26.0" layoutY="93.0" prefHeight="33.0" prefWidth="258.0" promptText="Prescription ID" />
+                                          <JFXComboBox fx:id="sale_phar_id" layoutX="25.0" layoutY="148.0" prefHeight="33.0" prefWidth="258.0" promptText="Pharmacist ID" />
+                                          <JFXComboBox fx:id="sale_payment_method" layoutX="24.0" layoutY="196.0" prefHeight="33.0" prefWidth="258.0" promptText="Payment Method" />
+                                          <Button layoutX="166.0" layoutY="296.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="120.0" styleClass="add-btn" stylesheets="@../../../../../Desktop/Programming%20Projects/Java%20Projects/FillingStationManagementSystem/src/Design/dashboardDesign.css" text="Add Cart" />
+                                          <Label layoutX="29.0" layoutY="369.0" text="Total:" />
+                                          <Label fx:id="total_amount" layoutX="96.0" layoutY="369.0" prefHeight="25.0" prefWidth="192.0" style="-fx-border-color: indigo;" text="₵0.00" />
+                                          <Label layoutX="25.0" layoutY="408.0" text="Amount:" />
+                                          <TextField fx:id="amount" layoutX="96.0" layoutY="407.0" prefHeight="27.0" prefWidth="191.0" promptText="₵0.00" style="-fx-border-color: indigo;" />
+                                          <Label layoutX="24.0" layoutY="446.0" text="Balance" />
+                                          <Label fx:id="balance" layoutX="96.0" layoutY="446.0" prefHeight="27.0" prefWidth="194.0" style="-fx-border-color: indigo;" text="₵0.00" />
+                                          <JFXButton layoutX="31.0" layoutY="493.0" prefHeight="33.0" prefWidth="251.0" styleClass="pay-btn" stylesheets="@../Styling/DashboardStyle.css" text="Pay" />
+                                          <JFXButton layoutX="31.0" layoutY="543.0" prefHeight="33.0" prefWidth="251.0" styleClass="receipt-btn" stylesheets="@../Styling/DashboardStyle.css" text="Receipt" />
+                                          <Label fx:id="quantity_prescribed" layoutX="25.0" layoutY="250.0" prefHeight="30.0" prefWidth="259.0" style="-fx-border-color: indigo;" text="Quantity prescribed" />
+                                       </children>
+                                                </AnchorPane>
+                                            </children>
+                                        </AnchorPane>
+                              <AnchorPane fx:id="changePassword_form" layoutX="16.0" layoutY="13.0" prefHeight="635.0" prefWidth="873.0" stylesheets="@../Styling/DashboardStyle.css" visible="false">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <AnchorPane layoutX="161.0" layoutY="12.0" prefHeight="610.0" prefWidth="521.0" stylesheets="@../Styling/DashboardStyle.css">
+                                       <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                          <String fx:value="semi-top-form" />
+                                       </styleClass>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </center>
+                    <left>
+                        <AnchorPane prefHeight="660.0" prefWidth="225.0" style="-fx-background-color: indigo;" BorderPane.alignment="CENTER">
+                            <children>
+                                <JFXButton fx:id="dashboard_btn" alignment="BASELINE_LEFT" graphicTextGap="12.0" layoutX="5.0" layoutY="252.0" onAction="#switchForm" prefHeight="31.0" prefWidth="209.0" styleClass="nav-btn" stylesheets="@../Styling/DashboardStyle.css" text="Dashboard" textFill="WHITE">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="DASHBOARD" size="1.5em" />
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="patient_btn" alignment="BASELINE_LEFT" graphicTextGap="12.0" layoutX="7.0" layoutY="332.0" onAction="#switchForm" prefHeight="31.0" prefWidth="209.0" styleClass="nav-btn" stylesheets="@../Styling/DashboardStyle.css" text="Patient" textFill="WHITE">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="WHEELCHAIR" size="1.5em" />
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="doctor_btn" alignment="BASELINE_LEFT" graphicTextGap="12.0" layoutX="6.0" layoutY="367.0" onAction="#switchForm" prefHeight="31.0" prefWidth="209.0" styleClass="nav-btn" stylesheets="@../Styling/DashboardStyle.css" text="Doctor" textFill="WHITE">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="USER_MD" size="1.5em" />
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="inventory_btn" alignment="BASELINE_LEFT" graphicTextGap="12.0" layoutX="6.0" layoutY="289.0" onAction="#switchForm" prefHeight="31.0" prefWidth="209.0" styleClass="nav-btn" stylesheets="@../Styling/DashboardStyle.css" text="Inventory" textFill="WHITE">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIcon fill="#fffafa" glyphName="PLUS_CIRCLE" size="1.5em" />
+                                    </graphic>
+                                </JFXButton>
+                                <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="61.0" layoutY="132.0" size="10em" />
+                                <Label alignment="CENTER" layoutX="-1.0" layoutY="147.0" prefHeight="45.0" prefWidth="223.0" text="WELCOME," textAlignment="CENTER" textFill="WHITE" underline="true">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                                <JFXButton fx:id="prescription_btn" alignment="BASELINE_LEFT" graphicTextGap="12.0" layoutX="6.0" layoutY="406.0" onAction="#switchForm" prefHeight="31.0" prefWidth="209.0" styleClass="nav-btn" stylesheets="@../Styling/DashboardStyle.css" text="Precription" textFill="WHITE">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="MEDKIT" size="1.5em" />
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="sale_btn" alignment="BASELINE_LEFT" graphicTextGap="12.0" layoutX="5.0" layoutY="449.0" onAction="#switchForm" prefHeight="31.0" prefWidth="209.0" styleClass="nav-btn" stylesheets="@../Styling/DashboardStyle.css" text="Sale" textFill="WHITE">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="MONEY" size="1.5em" />
+                                    </graphic>
+                                </JFXButton>
+                                <JFXButton fx:id="pharmacy_logout" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="12.0" layoutX="3.0" layoutY="619.0" onAction="#logout" prefHeight="37.0" prefWidth="108.0" styleClass="logout-btn" stylesheets="@../Styling/DashboardStyle.css" text="Logout" textFill="WHITE">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="1.5em" />
+                                    </graphic>
+                                </JFXButton>
+                                <Label fx:id="useremail" alignment="CENTER" layoutX="1.0" layoutY="195.0" prefHeight="23.0" prefWidth="223.0" style="-fx-border-color: #fff; -fx-border-radius: 10px;" textFill="WHITE">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <JFXButton fx:id="changePassword_btn" alignment="BASELINE_LEFT" graphicTextGap="12.0" layoutX="6.0" layoutY="491.0" onAction="#switchForm" prefHeight="31.0" prefWidth="209.0" styleClass="nav-btn" stylesheets="@../Styling/DashboardStyle.css" text="Change Password" textFill="WHITE">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="LOCK" size="1.5em" />
+                                    </graphic>
+                                </JFXButton>
+                        <JFXButton fx:id="backup_btn" alignment="BASELINE_LEFT" graphicTextGap="12.0" layoutX="6.0" layoutY="537.0" onAction="#createBackup" prefHeight="31.0" prefWidth="209.0" styleClass="nav-btn" stylesheets="@../Styling/DashboardStyle.css" text="Backup" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="DATABASE" size="1.5em" />
+                           </graphic>
+                        </JFXButton>
+                            </children>
+                        </AnchorPane>
+                    </left>
+                </BorderPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

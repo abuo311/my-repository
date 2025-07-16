@@ -1,0 +1,260 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 17, 2025, 11:44:46 PM
+    Author     : ABUO BERNARD
+*/
+.menu-button{
+    -fx-background-color: transparent;
+    -fx-border-radius: 8px;
+    -fx-border-color: #fff;
+    -fx-cursor: hand;
+    -fx-border-width: 1px;
+    -fx-font-family:"Arial";
+    -fx-font-size:14px;
+    -fx-text-fill: #fff;
+    -fx-alignment: CENTER_LEFT;
+}
+.menu-button .label{
+    -fx-text-fill: #fff;
+}
+.menu-button .menu-item .label{
+    -fx-text-fill: #000;   
+}
+.menu-button .menu-item .label:hover{
+  -fx-cursor: hand; 
+}
+.top-form{
+    -fx-background-color: #fff;
+    -fx-border-color: #000;
+    -fx-border-width: .4px .4px .2px .4px;
+}
+.close{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+.close:hover{
+    -fx-background-color: #e41639;
+}
+.minimize{
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+.minimize:hover{
+    -fx-background-color: #ddd;
+}
+.semi-top-form{
+    -fx-background-color: #efefef;
+    -fx-border-color: #000;
+    -fx-border-width: .2px .4px .8px .4px;
+}
+.nav-form{
+    -fx-background-color: linear-gradient(to right,#ff0000,#fcb215);
+}
+.nav-btn{
+    -fx-background-color: transparent;
+    -fx-border-radius: 8px;
+    -fx-border-color: #fff;
+    -fx-cursor: hand;
+    -fx-border-width: 1px;
+    -fx-font-family:"Arial";
+    -fx-font-size:14px;
+    -fx-text-fill: #fff;
+    -fx-alignment: CENTER_LEFT;
+}
+.nav-btn:hover{
+    -fx-border-color: linear-gradient(to right,#000,#fff);
+    -fx-border-radius: 8px;
+    -fx-background-color:#369eda;
+    -fx-background-radius: 8px;
+}
+.nav-btn-default{
+    -fx-background-color: linear-gradient(to top right,#862970,#6f4665);
+    -fx-cursor: hand;
+    -fx-font-family:"Arial";
+    -fx-font-size:14px;
+    -fx-text-fill: #fff;
+    -fx-alignment: CENTER_LEFT;
+}
+.logout-btn{
+    -fx-background-color: #ff64db;
+    -fx-cursor: hand;
+    -fx-background-radius: 8px;
+}
+.logout-btn:hover{
+    -fx-background-color: #d763be;
+}
+.white-bg{
+    -fx-background-color: #fff;
+    -fx-background-radius: 10px;
+}
+.cart1{
+    -fx-border-color: #fff;
+    -fx-border-radius: 8px;
+    -fx-border-width: 5px;
+    -fx-background-color: transparent;
+}
+.cart2{
+   -fx-background-color: linear-gradient(to right,#4b0082,#9f32f8);
+   -fx-background-radius: 8px; 
+}
+.cart3{
+   -fx-background-color: linear-gradient(to right, #6f2f2f, #cd4b4b);
+   -fx-background-radius: 8px; 
+}
+.shadow{
+    -fx-effect:dropshadow(three-pass-box, rgba(0,0,0,0.4), 5,0,0,0);
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+}
+.textfield{
+    -fx-background-color: transparent;
+    -fx-border-color: linear-gradient(to right,#ff0000,#fcb215);
+    -fx-font-family:"Tahoma";
+    -fx-font-size:16px;
+    -fx-text-fill: #fff;
+}
+.textfield:focused{
+    -fx-border-width: 0px 0px 2px 0px;
+}
+.combobox{
+    -fx-background-color: transparent;
+    -fx-border-color: linear-gradient(to right,#ff0000,#fcb215);
+    -fx-border-width: 1px;
+    -fx-font-family:"Tahoma";
+    -fx-font-size:16px;
+    -fx-text-fill: #fff;
+}
+.combobox:focused{
+    -fx-border-width: 2px;
+}
+.text{
+    -fx-text-color:#000;
+    -fx-font-size:16px;
+    -fx-text-fill: #000;
+}
+.add-btn{
+    -fx-background-color: #284b6f;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-font-family:"Tahoma";
+    -fx-font-size:14px;
+    -fx-text-fill: #fff;
+}
+.add-btn:hover{
+    -fx-background-color: #7ab6f2;
+}
+.update-btn{
+    -fx-background-color: #277221;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-font-family:"Tahoma";
+    -fx-font-size:14px;
+    -fx-text-fill: #fff;
+}
+.update-btn:hover{
+    -fx-background-color: #5efc4f;
+}
+.delete-btn{
+    -fx-background-color: c94a61;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-font-family:"Tahoma";
+    -fx-font-size:14px;
+    -fx-text-fill: #fff;
+}
+.delete-btn:hover{
+    -fx-background-color: #dd6c81;
+}
+.clear-btn{
+    -fx-background-color: #9a3290;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-font-family:"Tahoma";
+    -fx-font-size:14px;
+    -fx-text-fill: #fff;
+}
+.clear-btn:hover{
+    -fx-background-color: #eb5bdf;
+}
+.search{
+    -fx-background-color: transparent;
+    -fx-border-color: linear-gradient(to right,#ff0000,#fcb215);
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-padding: 0px 0px 0px 28px;
+}
+.search:focused{
+   -fx-border-width: 2px; 
+}
+.table-view{
+    -fx-background-color: #fff;
+    -fx-border-color: linear-gradient(to right,#4b0082,#9f32f8);
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+}
+.table-view .table-column{
+    -fx-alignment: CENTER;
+}
+.table-view .column-header-background{
+    -fx-background-color: linear-gradient(to right,#4b0082,#9f32f8);
+    -fx-background-insets: 0 0 0 0;
+    -fx-background-radius: 5px 5px 0px 0px;
+}
+.table-view .column-header, .filter{
+    -fx-background-color: transparent;
+    -fx-size:30px;
+}
+.table-view .column-header .label{
+    -fx-text-fill: #fff;
+}
+.pay-btn{
+    -fx-background-color: #34779a;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-font-family:"Tahoma";
+    -fx-font-size:14px;
+    -fx-text-fill: #fff;
+}
+.pay-btn:hover{
+    -fx-background-color: #419ac6;
+}
+.receipt-btn{
+    -fx-background-color: #989a27;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-font-family:"Tahoma";
+    -fx-font-size:14px;
+    -fx-text-fill: #fff;
+}
+.receipt-btn:hover{
+    -fx-background-color: #c4c640;
+}
+.picture{
+    -fx-border-color: #000;
+    -fx-border-width: 10px;
+    -fx-border-radius: 10px;
+    -fx-effect: dropshadow(gaussian,rgba(0,0,0,0.5),10,0,0,10);
+}
+.area-chart{
+    -fx-border-radius: 8px;
+    -fx-border-width: 5px;
+    -fx-background-color: transparent;
+    -fx-text-fill: #fff;
+}
+.pay-textfill{
+    -fx-background-color: transparent;
+    -fx-border-color: linear-gradient(to right,#ff0000,#fcb215);
+    -fx-border-width: 1px;
+    -fx-font-family:"Tahoma";
+    -fx-font-size:16px;
+    -fx-text-fill: #fff;
+}
+.pointer{
+    -fx-cursor: hand;
+}
+
+

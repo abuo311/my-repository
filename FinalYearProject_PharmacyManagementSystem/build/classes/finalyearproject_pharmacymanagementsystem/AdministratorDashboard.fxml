@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1124.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="finalyearproject_pharmacymanagementsystem.AdministratorDashboardController">
+    <children>
+        <AnchorPane fx:id="main_form" prefHeight="700.0" prefWidth="1124.0">
+            <children>
+                <BorderPane layoutX="116.0" prefHeight="700.0" prefWidth="1124.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <top>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="1130.0" style="-fx-background-color: indigo;">
+                            <children>
+                                <Button fx:id="close" layoutX="1078.0" layoutY="-1.0" mnemonicParsing="false" onAction="#close" prefHeight="36.0" prefWidth="46.0" styleClass="close" stylesheets="@../Styling/DashboardStyle.css">
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="CLOSE" size="1.5em" />
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="minimize" layoutX="1025.0" layoutY="-3.0" mnemonicParsing="false" onAction="#minimize" prefHeight="38.0" prefWidth="46.0" styleClass="minimize" stylesheets="@../Styling/DashboardStyle.css">
+                                    <graphic>
+                                        <FontAwesomeIcon fill="WHITE" glyphName="MINUS" size="1.5em" />
+                                    </graphic>
+                                </Button>
+                                <FontAwesomeIcon fill="WHITE" glyphName="STETHOSCOPE" layoutX="19.0" layoutY="31.0" size="2em" strokeWidth="2.0" />
+                        <Label layoutX="50.0" layoutY="2.0" text="Welcome to Minamo Pharmacy" textFill="WHITE">
+                           <font>
+                              <Font name="American Captain" size="30.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="374.0" layoutY="4.0" text="|" textFill="WHITE">
+                           <font>
+                              <Font name="Archery Black Condensed" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="374.0" layoutY="4.0" text="|" textFill="WHITE">
+                           <font>
+                              <Font name="Archery Black Condensed" size="36.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="391.0" layoutY="4.0" text="Admin Portal" textFill="WHITE">
+                           <font>
+                              <Font name="SansSerif Italic" size="31.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="clockLabel" alignment="CENTER" layoutX="651.0" layoutY="3.0" prefHeight="41.0" prefWidth="175.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font>
+                        </Label>
+                            </children>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                        </AnchorPane>
+                    </top>
+                    <center>
+                        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="659.0" prefWidth="905.0" BorderPane.alignment="CENTER">
+                     <children>
+                                  <AnchorPane fx:id="admin_dashboard_form" layoutX="2.0" layoutY="7.0" prefHeight="652.0" prefWidth="893.0" stylesheets="@../Styling/DashboardStyle.css" visible="false">
+                                      <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                      </styleClass>
+                                      <children>
+                                          <AnchorPane layoutX="12.0" layoutY="5.0" prefHeight="647.0" prefWidth="868.0" stylesheets="@../Styling/DashboardStyle.css">
+                                              <styleClass>
+                                                  <String fx:value="white-bg" />
+                                                  <String fx:value="shadow" />
+                                              </styleClass>
+                                              <children>
+                                                  <AnchorPane layoutX="11.0" layoutY="19.0" prefHeight="121.0" prefWidth="200.0" styleClass="cart2" stylesheets="@../Styling/DashboardStyle.css">
+                                                      <children>
+                                                          <Label fx:id="dash_totalNumerOfUsers" alignment="CENTER_RIGHT" layoutX="7.0" layoutY="82.0" prefHeight="38.0" prefWidth="190.0" text="0" textFill="WHITE">
+                                                              <font>
+                                                                  <Font name="SansSerif Bold" size="65.0" />
+                                                              </font>
+                                                          </Label>
+                                                          <FontAwesomeIcon fill="WHITE" glyphName="USERS" layoutX="10.0" layoutY="41.0" size="3em" />
+                                                          <Label layoutX="2.0" layoutY="47.0" prefHeight="38.0" prefWidth="190.0" text="Total Number of users" textFill="WHITE">
+                                                              <font>
+                                                                  <Font name="SansSerif Bold" size="65.0" />
+                                                              </font>
+                                                          </Label>
+                                                      </children>
+                                                  </AnchorPane>
+                                                  <AnchorPane layoutX="224.0" layoutY="18.0" prefHeight="121.0" prefWidth="200.0" styleClass="cart2" stylesheets="@../Styling/DashboardStyle.css">
+                                                      <children>
+                                                          <Label fx:id="dash_totalNumerOfProduct" alignment="CENTER_RIGHT" layoutX="5.0" layoutY="86.0" prefHeight="38.0" prefWidth="190.0" text="0" textFill="WHITE">
+                                                              <font>
+                                                                  <Font name="SansSerif Bold" size="65.0" />
+                                                              </font>
+                                                          </Label>
+                                                          <FontAwesomeIcon fill="WHITE" glyphName="PLUS_CIRCLE" layoutX="8.0" layoutY="45.0" size="3em" />
+                                                          <Label layoutY="51.0" prefHeight="38.0" prefWidth="190.0" text="Total Number of Product" textFill="WHITE">
+                                                              <font>
+                                                                  <Font name="SansSerif Bold" size="65.0" />
+                                                              </font>
+                                                          </Label>
+                                                      </children>
+                                                  </AnchorPane>
+                                                  <AnchorPane layoutX="435.0" layoutY="18.0" prefHeight="121.0" prefWidth="200.0" styleClass="cart2" stylesheets="@../Styling/DashboardStyle.css">
+                                                      <children>
+                                                          <Label fx:id="dash_todayIncome" alignment="CENTER_RIGHT" layoutX="6.0" layoutY="72.0" prefHeight="38.0" prefWidth="190.0" text="0.0" textFill="WHITE">
+                                                              <font>
+                                                                  <Font name="SansSerif Bold" size="65.0" />
+                                                              </font>
+                                                          </Label>
+                                                          <FontAwesomeIcon fill="WHITE" glyphName="MONEY" layoutX="9.0" layoutY="31.0" size="3em" />
+                                                          <Label layoutX="1.0" layoutY="37.0" prefHeight="38.0" prefWidth="190.0" text="Today's Income" textFill="WHITE">
+                                                              <font>
+                                                                  <Font name="SansSerif Bold" size="65.0" />
+                                                              </font>
+                                                          </Label>
+                                                      </children>
+                                                  </AnchorPane>
+                                                  <AnchorPane layoutX="651.0" layoutY="18.0" prefHeight="121.0" prefWidth="200.0" styleClass="cart2" stylesheets="@../Styling/DashboardStyle.css">
+                                                      <children>
+                                                          <Label fx:id="dash_expiringDate" alignment="CENTER_RIGHT" layoutX="12.0" layoutY="77.0" prefHeight="38.0" prefWidth="190.0" text="0" textFill="WHITE">
+                                                              <font>
+                                                                  <Font name="SansSerif Bold" size="65.0" />
+                                                              </font>
+                                                          </Label>
+                                                          <FontAwesomeIcon fill="WHITE" glyphName="CALENDAR" layoutX="15.0" layoutY="36.0" size="3em" />
+                                                          <Label layoutX="7.0" layoutY="42.0" prefHeight="38.0" prefWidth="190.0" text="Expiring Date" textFill="WHITE">
+                                                              <font>
+                                                                  <Font name="SansSerif Bold" size="65.0" />
+                                                              </font>
+                                                          </Label>
+                                                      </children>
+                                                  </AnchorPane>
+                                                <AnchorPane layoutX="13.0" layoutY="155.0" prefHeight="456.0" prefWidth="444.0" stylesheets="@../Styling/DashboardStyle.css">
+                                                    <styleClass>
+                                                        <String fx:value="white-bg" />
+                                                        <String fx:value="shadow" />
+                                                    </styleClass>
+                                                    <children>
+                                                        <AreaChart fx:id="dash_tareaChart" layoutX="15.0" layoutY="19.0" prefHeight="457.0" prefWidth="413.0" title="Daily Income">
+                                                            <xAxis>
+                                                                <CategoryAxis side="BOTTOM" />
+                                                            </xAxis>
+                                                            <yAxis>
+                                                                <NumberAxis side="LEFT" />
+                                                            </yAxis>
+                                                        </AreaChart>
+                                                    </children>
+                                                </AnchorPane>
+                                              </children>
+                                          </AnchorPane>
+                                          <AnchorPane layoutX="482.0" layoutY="157.0" prefHeight="485.0" prefWidth="376.0" stylesheets="@../Styling/DashboardStyle.css">
+                                              <styleClass>
+                                                  <String fx:value="white-bg" />
+                                                  <String fx:value="shadow" />
+                                              </styleClass>
+                                              <children>
+                                                  <BarChart fx:id="dash_barChart" layoutX="15.0" layoutY="17.0" prefHeight="452.0" prefWidth="367.0" title="Product / Mediccine">
+                                                      <xAxis>
+                                                          <CategoryAxis side="BOTTOM" />
+                                                      </xAxis>
+                                                      <yAxis>
+                                                          <NumberAxis side="LEFT" />
+                                                      </yAxis>
+                                                  </BarChart>
+                                              </children>
+                                          </AnchorPane>
+                                      </children>
+                                  </AnchorPane>
+                                  <AnchorPane fx:id="admin_addUser_form" layoutX="-5.0" layoutY="8.0" prefHeight="641.0" prefWidth="880.0" stylesheets="@../Styling/DashboardStyle.css" visible="false">
+                                      <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                      </styleClass>
+                                      <children>
+                                          <AnchorPane layoutX="250.0" layoutY="18.0" prefHeight="367.0" prefWidth="320.0" style="-fx-border-color: #000; -fx-border-radius: 10px; -fx-background-color: cyan; -fx-background-radius: 10px;">
+                                              <children>
+                                                  <JFXTextField fx:id="add_email" focusColor="WHITE" labelFloat="true" layoutX="18.0" layoutY="135.0" prefHeight="25.0" prefWidth="259.0" promptText="Email:" styleClass="text" stylesheets="@../Styling/DashboardStyle.css" unFocusColor="#63bc4d">
+                                                      <font>
+                                                          <Font name="System Bold" size="15.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="add_name" focusColor="WHITE" labelFloat="true" layoutX="18.0" layoutY="69.0" prefHeight="25.0" prefWidth="259.0" promptText="Name:" styleClass="text" stylesheets="@../Styling/DashboardStyle.css" unFocusColor="#6bbc70">
+                                                      <font>
+                                                          <Font name="System Bold" size="15.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="add_password" focusColor="WHITE" labelFloat="true" layoutX="18.0" layoutY="197.0" prefHeight="25.0" prefWidth="259.0" promptText="Password:" styleClass="text" stylesheets="@../Styling/DashboardStyle.css" unFocusColor="#59b950">
+                                                      <font>
+                                                          <Font name="System Bold" size="15.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXComboBox fx:id="add_role" focusColor="WHITE" labelFloat="true" layoutX="20.0" layoutY="254.0" prefHeight="25.0" prefWidth="263.0" promptText="Role:" style="-fx-font-size: 15px; -fx-font-style: bold; -fx-font-weight: 700;" styleClass="text" stylesheets="@../Styling/DashboardStyle.css" unFocusColor="#41a84b" />
+                                                  <JFXButton fx:id="add_registerBtn" buttonType="RAISED" layoutX="23.0" layoutY="320.0" onAction="#addUsers" prefHeight="39.0" prefWidth="271.0" ripplerFill="#e8e3e3" styleClass="add-btn" stylesheets="@../Styling/DashboardStyle.css" text="Register">
+                                                      <font>
+                                                          <Font name="System Bold" size="16.0" />
+                                                      </font>
+                                                      <cursor>
+                                                          <Cursor fx:constant="HAND" />
+                                                      </cursor>
+                                                  </JFXButton>
+                                                  <Label layoutX="3.0" layoutY="2.0" prefHeight="43.0" prefWidth="314.0" style="-fx-alignment: center; -fx-border-radius: 10px; -fx-font-size: 26px; -fx-border-color: #fff;" text="Add Admin / Pharmacist" textFill="WHITE">
+                                                      <font>
+                                                          <Font name="Times New Roman Bold" size="13.0" />
+                                                      </font>
+                                                  </Label>
+                                              </children>
+                                          </AnchorPane>
+                                          <TableView fx:id="add_tableView" layoutX="23.0" layoutY="395.0" prefHeight="237.0" prefWidth="808.0" stylesheets="@../Styling/DashboardStyle.css" tableMenuButtonVisible="true">
+                                              <columns>
+                                                  <TableColumn fx:id="add_col_id" prefWidth="75.0" text="ID" />
+                                                  <TableColumn fx:id="add_col_name" prefWidth="131.0" text="NAME" />
+                                                  <TableColumn fx:id="add_col_email" prefWidth="131.0" text="EMAIL" />
+                                                  <TableColumn fx:id="add_col_role" prefWidth="131.0" text="ROLE" />
+                                                  <TableColumn fx:id="add_col_password" prefWidth="144.0" text="PASSWORD" />
+                                                  <TableColumn fx:id="add_col_date" prefWidth="186.0" text="DATE" />
+                                              </columns>
+                                              <columnResizePolicy>
+                                                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                              </columnResizePolicy>
+                                          </TableView>
+                                      </children>
+                                  </AnchorPane>
+                                  <AnchorPane fx:id="admin_editUser_form" prefHeight="658.0" prefWidth="846.0" stylesheets="@../Styling/DashboardStyle.css" visible="false">
+                                      <styleClass>
+                                          <String fx:value="white-bg" />
+                                          <String fx:value="shadow" />
+                                      </styleClass>
+                                      <children>
+                                          <AnchorPane layoutX="250.0" layoutY="12.0" prefHeight="367.0" prefWidth="320.0" style="-fx-border-color: #79f15b; -fx-border-radius: 10px; -fx-background-color: gold; -fx-background-radius: 10px;">
+                                              <children>
+                                                  <JFXTextField fx:id="edit_email" focusColor="WHITE" labelFloat="true" layoutX="18.0" layoutY="138.0" prefHeight="25.0" prefWidth="259.0" promptText="Email:" styleClass="text" stylesheets="@../Styling/DashboardStyle.css" unFocusColor="#63bc4d">
+                                                      <font>
+                                                          <Font name="System Bold" size="15.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="edit_name" editable="false" focusColor="WHITE" labelFloat="true" layoutX="18.0" layoutY="78.0" prefHeight="25.0" prefWidth="259.0" promptText="Name:" styleClass="text" stylesheets="@../Styling/DashboardStyle.css" unFocusColor="#6bbc70">
+                                                      <font>
+                                                          <Font name="System Bold" size="15.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="edit_password" focusColor="WHITE" labelFloat="true" layoutX="18.0" layoutY="197.0" prefHeight="25.0" prefWidth="259.0" promptText="Password:" styleClass="text" stylesheets="@../Styling/DashboardStyle.css" unFocusColor="#59b950">
+                                                      <font>
+                                                          <Font name="System Bold" size="15.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXComboBox fx:id="edit_role" focusColor="WHITE" labelFloat="true" layoutX="20.0" layoutY="254.0" prefHeight="25.0" prefWidth="263.0" promptText="Role:" style="-fx-font-size: 15px; -fx-font-style: bold; -fx-font-weight: 700;" styleClass="text" stylesheets="@../Styling/DashboardStyle.css" unFocusColor="#41a84b" />
+                                                  <JFXButton fx:id="edit_updateBtn" buttonType="RAISED" layoutX="19.0" layoutY="314.0" onAction="#editUser" prefHeight="39.0" prefWidth="99.0" ripplerFill="#e8e3e3" styleClass="update-btn" stylesheets="@../Styling/DashboardStyle.css" text="Update">
+                                                      <font>
+                                                          <Font name="System Bold" size="16.0" />
+                                                      </font>
+                                                      <cursor>
+                                                          <Cursor fx:constant="HAND" />
+                                                      </cursor>
+                                                  </JFXButton>
+                                                  <Label layoutX="3.0" layoutY="1.0" prefHeight="43.0" prefWidth="314.0" style="-fx-alignment: center; -fx-font-size: 26px; -fx-border-color: #fff; -fx-border-radius: 10px;" text="Edit Admin / Pharmacist" textFill="WHITE">
+                                                      <font>
+                                                          <Font name="Times New Roman Bold" size="13.0" />
+                                                      </font>
+                                                  </Label>
+                                    <JFXButton fx:id="edit_updateBtn1" buttonType="RAISED" layoutX="193.0" layoutY="314.0" onAction="#clearUserFields" prefHeight="39.0" prefWidth="99.0" ripplerFill="#e8e3e3" styleClass="clear-btn" stylesheets="@../Styling/DashboardStyle.css" text="Clear">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                              </children>
+                                          </AnchorPane>
+                                          <TableView fx:id="edit_tableView" editable="true" layoutX="22.0" layoutY="414.0" onMouseClicked="#selectUser" prefHeight="237.0" prefWidth="807.0" style="-fx-background-color: transparent;" tableMenuButtonVisible="true">
+                                              <columns>
+                                                  <TableColumn fx:id="edit_col_id" prefWidth="75.0" text="ID" />
+                                                  <TableColumn fx:id="edit_col_name" prefWidth="131.0" text="NAME" />
+                                                  <TableColumn fx:id="edit_col_email" prefWidth="131.0" text="EMAIL" />
+                                                  <TableColumn fx:id="edit_col_password" prefWidth="131.0" text="PASSWORD" />
+                                                  <TableColumn fx:id="edit_col_role" prefWidth="144.0" text="ROLE" />
+                                                  <TableColumn fx:id="edit_col_date" prefWidth="186.0" text="DATE" />
+                                              </columns>
+                                              <columnResizePolicy>
+                                                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                              </columnResizePolicy>
+                                          </TableView>
+                                          <Label layoutX="313.0" layoutY="389.0" style="-fx-background-color: red; -fx-text-fill: #fff; -fx-font-size: 16px;" text="Click on the row to Update" />
+                                      </children>
+                                  </AnchorPane>
+                                  <AnchorPane fx:id="admin_deleteUser_form" prefHeight="657.0" prefWidth="852.0" stylesheets="@../Styling/DashboardStyle.css" visible="false">
+                                      <children>
+                                          <AnchorPane layoutX="250.0" layoutY="12.0" prefHeight="367.0" prefWidth="320.0" style="-fx-border-color: #79f15b; -fx-border-radius: 10px; -fx-background-color: brown; -fx-background-radius: 10px; -fx-animation: moveText 5s infinite linear; -fx-animation-name: moveText;">
+                                              <children>
+                                                  <JFXTextField fx:id="delete_email" editable="false" focusColor="WHITE" labelFloat="true" layoutX="18.0" layoutY="139.0" prefHeight="25.0" prefWidth="259.0" promptText="Email:" styleClass="text" stylesheets="@../Styling/DashboardStyle.css" unFocusColor="#63bc4d">
+                                                      <font>
+                                                          <Font name="System Bold" size="15.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="delete_name" editable="false" focusColor="WHITE" labelFloat="true" layoutX="18.0" layoutY="81.0" prefHeight="25.0" prefWidth="259.0" promptText="Name:" styleClass="text" stylesheets="@../Styling/DashboardStyle.css" unFocusColor="#6bbc70">
+                                                      <font>
+                                                          <Font name="System Bold" size="15.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="delete_password" editable="false" focusColor="WHITE" labelFloat="true" layoutX="18.0" layoutY="197.0" prefHeight="25.0" prefWidth="259.0" promptText="Password:" styleClass="text" stylesheets="@../Styling/DashboardStyle.css" unFocusColor="#59b950">
+                                                      <font>
+                                                          <Font name="System Bold" size="15.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXComboBox fx:id="delete_role" focusColor="WHITE" labelFloat="true" layoutX="20.0" layoutY="254.0" prefHeight="25.0" prefWidth="263.0" promptText="Role:" style="-fx-font-size: 15px; -fx-font-style: bold; -fx-font-weight: 700;" styleClass="text" stylesheets="@../Styling/DashboardStyle.css" unFocusColor="#41a84b" />
+                                                  <JFXButton fx:id="delete_deleteBtn" buttonType="RAISED" layoutX="18.0" layoutY="314.0" onAction="#deleteUser" prefHeight="39.0" prefWidth="107.0" ripplerFill="#e8e3e3" styleClass="delete-btn" stylesheets="@../Styling/DashboardStyle.css" text="Delete">
+                                                      <font>
+                                                          <Font name="System Bold" size="16.0" />
+                                                      </font>
+                                                      <cursor>
+                                                          <Cursor fx:constant="HAND" />
+                                                      </cursor>
+                                                  </JFXButton>
+                                                  <Label alignment="CENTER" layoutX="3.0" prefHeight="43.0" prefWidth="313.0" style="-fx-border-radius: 10px; -fx-border-color: #fff; -fx-font-size: 26px;" text="Delete Admin / Pharmacist" textFill="WHITE">
+                                                      <font>
+                                                          <Font name="Times New Roman Bold" size="13.0" />
+                                                      </font>
+                                                  </Label>
+                                    <JFXButton fx:id="clear_deleteBtn" buttonType="RAISED" layoutX="176.0" layoutY="314.0" onAction="#clearUserFields" prefHeight="39.0" prefWidth="107.0" ripplerFill="#e8e3e3" styleClass="clear-btn" stylesheets="@../Styling/DashboardStyle.css" text="Clear">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </JFXButton>
+                                              </children>
+                                          </AnchorPane>
+                                          <Label layoutX="306.0" layoutY="381.0" style="-fx-background-color: red; -fx-font-size: 16px; -fx-text-fill: #fff;" text="Click on the row to Delete" />
+                                          <TableView fx:id="delete_tableView" layoutX="15.0" layoutY="409.0" onMouseClicked="#SelectUser" prefHeight="237.0" prefWidth="816.0" style="-fx-background-color: transparent;" tableMenuButtonVisible="true">
+                                              <columns>
+                                                  <TableColumn fx:id="delete_col_id" prefWidth="75.0" text="ID" />
+                                                  <TableColumn fx:id="delete_col_name" prefWidth="131.0" text="NAME" />
+                                                  <TableColumn fx:id="delete_col_email" prefWidth="131.0" text="EMAIL" />
+                                                  <TableColumn fx:id="delete_col_password" prefWidth="131.0" text="PASSWORD" />
+                                                  <TableColumn fx:id="delete_col_role" prefWidth="144.0" text="ROLE" />
+                                                  <TableColumn fx:id="delete_col_date" prefWidth="201.0" text="DATE" />
+                                              </columns>
+                                              <columnResizePolicy>
+                                                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                              </columnResizePolicy>
+                                          </TableView>
+                                      </children>
+                                  </AnchorPane>
+                                  <AnchorPane fx:id="admin_changePassword_form" prefHeight="655.0" prefWidth="852.0" stylesheets="@../Styling/DashboardStyle.css" visible="false">
+                                      <children>
+                                          <ImageView fitHeight="643.0" fitWidth="839.0" layoutX="8.0" layoutY="7.0" pickOnBounds="true">
+                                              <image>
+                                                  <Image url="@../images/group-pharmacists-pharmacy-flat-design-cartoon-illustration.jpg" />
+                                              </image>
+                                          </ImageView>
+                                          <AnchorPane fx:id="proceedPass_form" layoutX="260.0" layoutY="103.0" prefHeight="453.0" prefWidth="320.0" style="-fx-border-color: #79f15b; -fx-border-radius: 10px; -fx-background-color: lightgreen; -fx-background-radius: 10px;">
+                                              <children>
+                                                  <JFXTextField fx:id="admin_changePass_email" focusColor="WHITE" labelFloat="true" layoutX="18.0" layoutY="200.0" prefHeight="25.0" prefWidth="259.0" promptText="Email:" styleClass="text" stylesheets="@../Styling/DashboardStyle.css" unFocusColor="#63bc4d">
+                                                      <font>
+                                                          <Font name="System Bold" size="15.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="admin_changePass_name" focusColor="WHITE" labelFloat="true" layoutX="18.0" layoutY="111.0" prefHeight="25.0" prefWidth="259.0" promptText="Name:" styleClass="text" stylesheets="@../Styling/DashboardStyle.css" unFocusColor="#6bbc70">
+                                                      <font>
+                                                          <Font name="System Bold" size="15.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXComboBox fx:id="admin_changePass_role" focusColor="WHITE" labelFloat="true" layoutX="20.0" layoutY="279.0" prefHeight="25.0" prefWidth="263.0" promptText="Role:" style="-fx-font-size: 15px; -fx-font-style: bold; -fx-font-weight: 700;" styleClass="text" stylesheets="@../Styling/DashboardStyle.css" unFocusColor="#41a84b" />
+                                                  <JFXButton fx:id="admin_proceedBtn" buttonType="RAISED" layoutX="18.0" layoutY="360.0" onAction="#proceedBtn" prefHeight="39.0" prefWidth="278.0" ripplerFill="#e8e3e3" styleClass="logout-btn" stylesheets="@../Styling/DashboardStyle.css" text="Proceed" textFill="WHITE">
+                                                      <font>
+                                                          <Font name="System Bold" size="16.0" />
+                                                      </font>
+                                                      <cursor>
+                                                          <Cursor fx:constant="HAND" />
+                                                      </cursor>
+                                                  </JFXButton>
+                                                  <Label alignment="CENTER" layoutX="4.0" layoutY="11.0" prefHeight="43.0" prefWidth="314.0" style="-fx-background-radius: 10px; -fx-alignment: center; -fx-border-color: #fff; -fx-border-radius: 10px; -fx-font-size: 26px;" text="Change Password" textFill="WHITE">
+                                                      <font>
+                                                          <Font name="Times New Roman Bold" size="14.0" />
+                                                      </font>
+                                                  </Label>
+                                              </children>
+                                          </AnchorPane>
+                                          <AnchorPane fx:id="changePass_form" layoutX="268.0" layoutY="24.0" prefHeight="335.0" prefWidth="320.0" style="-fx-border-color: #79f15b; -fx-border-radius: 10px; -fx-background-color: #fff; -fx-background-radius: 10px;" visible="false">
+                                              <children>
+                                                  <JFXButton fx:id="admin_changedBtn" buttonType="RAISED" layoutX="26.0" layoutY="225.0" onAction="#changePassword" prefHeight="39.0" prefWidth="278.0" ripplerFill="#e8e3e3" styleClass="logout-btn" stylesheets="@../Styling/DashboardStyle.css" text="Changed" textFill="WHITE">
+                                                      <font>
+                                                          <Font name="System Bold" size="16.0" />
+                                                      </font>
+                                                      <cursor>
+                                                          <Cursor fx:constant="HAND" />
+                                                      </cursor>
+                                                  </JFXButton>
+                                                  <Label alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="43.0" prefWidth="293.0" style="-fx-background-radius: 10px; -fx-alignment: center; -fx-border-radius: 10px; -fx-font-size: 26px; -fx-border-color: #0fa42f;" text="New Password" textFill="#0fa42f">
+                                                      <font>
+                                                          <Font name="Times New Roman Bold" size="13.0" />
+                                                      </font>
+                                                  </Label>
+                                                  <JFXPasswordField fx:id="admin_newPass" focusColor="#63e45a" labelFloat="true" layoutX="31.0" layoutY="99.0" prefHeight="25.0" prefWidth="261.0" promptText="New Password" unFocusColor="#45e130">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </JFXPasswordField>
+                                                  <JFXPasswordField fx:id="admin_confirmPass" focusColor="#63e45a" labelFloat="true" layoutX="26.0" layoutY="180.0" prefHeight="25.0" prefWidth="261.0" promptText="Confirm Password" unFocusColor="#45e130">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </JFXPasswordField>
+                                                  <JFXButton fx:id="backBtn" buttonType="RAISED" layoutX="26.0" layoutY="278.0" style="-fx-background-color: blue;" text="&lt; Back" textFill="WHITE">
+                                                      <font>
+                                                          <Font size="13.0" />
+                                                      </font>
+                                                  </JFXButton>
+                                              </children>
+                                          </AnchorPane>
+                                      </children>
+                                  </AnchorPane>
+                                  <AnchorPane fx:id="update_medicine_form" stylesheets="@../Styling/DashboardStyle.css" visible="false">
+                                      <children>
+                                          <AnchorPane layoutX="15.0" layoutY="14.0" prefHeight="624.0" prefWidth="819.0" stylesheets="@../Styling/DashboardStyle.css">
+                                              <styleClass>
+                                                  <String fx:value="white-bg" />
+                                                  <String fx:value="shadow" />
+                                              </styleClass>
+                                              <children>
+                                                  <JFXTextField fx:id="med_name1" focusColor="#63ff7b" labelFloat="true" layoutX="32.0" layoutY="149.0" prefHeight="37.0" prefWidth="220.0" promptText="Medication Name:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="invoice_no1" focusColor="#63ff7b" labelFloat="true" layoutX="29.0" layoutY="226.0" prefHeight="37.0" prefWidth="225.0" promptText="Invoice Number:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="generic_name1" focusColor="#63ff7b" labelFloat="true" layoutX="31.0" layoutY="293.0" prefHeight="37.0" prefWidth="222.0" promptText="Generic Name:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="manufacturer1" focusColor="#63ff7b" labelFloat="true" layoutX="28.0" layoutY="368.0" prefHeight="37.0" prefWidth="225.0" promptText="Manufacturer:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextArea fx:id="dosage1" focusColor="#3eb23e" labelFloat="true" layoutX="24.0" layoutY="444.0" prefHeight="78.0" prefWidth="230.0" promptText="Dosage:">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextArea>
+                                                  <JFXTextField fx:id="form1" focusColor="#63ff7b" labelFloat="true" layoutX="24.0" layoutY="547.0" prefHeight="25.0" prefWidth="232.0" promptText="Form:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="unit1" focusColor="#63ff7b" labelFloat="true" layoutX="270.0" layoutY="68.0" prefHeight="25.0" prefWidth="222.0" promptText="Unit:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="NDC1" focusColor="#63ff7b" labelFloat="true" layoutX="270.0" layoutY="141.0" prefHeight="37.0" prefWidth="222.0" promptText="NDC:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXDatePicker fx:id="expiring_date1" layoutX="272.0" layoutY="222.0" overLay="true" prefHeight="25.0" prefWidth="219.0" promptText="Choose Date" showWeekNumbers="true" style="-fx-font-size: 16px;" />
+                                                  <JFXTextArea fx:id="storage_instruction1" focusColor="#3eb23e" labelFloat="true" layoutX="272.0" layoutY="280.0" prefHeight="78.0" prefWidth="217.0" promptText="Storage instructions:">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextArea>
+                                                  <JFXTextField fx:id="price1" focusColor="#63ff7b" labelFloat="true" layoutX="272.0" layoutY="397.0" prefHeight="25.0" prefWidth="232.0" promptText="Price:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <AnchorPane layoutX="563.0" layoutY="87.0" prefHeight="235.0" prefWidth="200.0" stylesheets="@../Styling/DashboardStyle.css">
+                                                      <styleClass>
+                                                          <String fx:value="shadow" />
+                                                          <String fx:value="white-bg" />
+                                                      </styleClass>
+                                                      <children>
+                                                          <ImageView fx:id="medicine_imageView1" fitHeight="221.0" fitWidth="188.0" layoutX="6.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+                                                          <JFXButton fx:id="importBtn1" layoutX="4.0" layoutY="205.0" onAction="#medicineImportImageBtn" prefHeight="33.0" prefWidth="192.0" text="import" />
+                                                      </children>
+                                                  </AnchorPane>
+                                                  <JFXButton fx:id="updateMedBtn" layoutX="574.0" layoutY="358.0" onAction="#updateMedication" prefHeight="33.0" prefWidth="180.0" styleClass="update-btn" stylesheets="@../Styling/DashboardStyle.css" text="Update medicine" />
+                                                  <Label layoutX="272.0" layoutY="203.0" prefWidth="105.0" text="Expiring Date:" />
+                                                  <TextField fx:id="searchMedicine" layoutX="471.0" layoutY="14.0" prefHeight="35.0" prefWidth="222.0" promptText="Search Medicine ID" styleClass="search" stylesheets="@../Styling/DashboardStyle.css" />
+                                                  <Button fx:id="searchBtn" layoutX="693.0" layoutY="14.0" mnemonicParsing="false" onAction="#search" prefHeight="36.0" prefWidth="96.0" styleClass="update-btn" stylesheets="@../Styling/DashboardStyle.css" text="Search">
+                                                      <graphic>
+                                                          <FontAwesomeIcon fill="WHITE" glyphName="SEARCH" size="1.5em" />
+                                                      </graphic>
+                                                  </Button>
+                                                  <FontAwesomeIcon glyphName="SEARCH" layoutX="479.0" layoutY="38.0" size="1.5em" />
+                                                  <Label alignment="CENTER" layoutX="106.0" layoutY="9.0" prefHeight="45.0" prefWidth="296.0" style="-fx-background-color: gold; -fx-font-size: 30px; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-text-fill: #26a418;" text="Edit Medicine Form" textAlignment="CENTER" />
+                                                  <JFXTextField fx:id="available_qty" editable="false" focusColor="#63ff7b" labelFloat="true" layoutX="272.0" layoutY="465.0" prefHeight="25.0" prefWidth="232.0" promptText="Available Quantity " unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="add_qty" focusColor="#63ff7b" labelFloat="true" layoutX="269.0" layoutY="525.0" prefHeight="25.0" prefWidth="232.0" promptText="Add Quantity" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                    <JFXButton fx:id="updateMedBtn1" layoutX="577.0" layoutY="416.0" onAction="#resetFields" prefHeight="33.0" prefWidth="180.0" styleClass="clear-btn" stylesheets="@../Styling/DashboardStyle.css" text="Reset" />
+                                    <JFXTextField fx:id="med_Id1" focusColor="#63ff7b" labelFloat="true" layoutX="27.0" layoutY="69.0" prefHeight="37.0" prefWidth="220.0" promptText="Medication ID" unFocusColor="#108d17">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </JFXTextField>
+                                              </children>
+                                          </AnchorPane>
+                                      </children>
+                                  </AnchorPane>
+                                  <AnchorPane fx:id="delete_medicine_form" prefHeight="652.0" prefWidth="852.0" stylesheets="@../Styling/DashboardStyle.css" visible="false">
+                                      <children>
+                                          <AnchorPane layoutX="16.0" layoutY="14.0" prefHeight="624.0" prefWidth="819.0" style="-fx-border-width: 5px; -fx-border-color: gold;" stylesheets="@../Styling/DashboardStyle.css">
+                                              <styleClass>
+                                                  <String fx:value="white-bg" />
+                                                  <String fx:value="shadow" />
+                                              </styleClass>
+                                              <children>
+                                                  <JFXTextField fx:id="med_Id11" editable="false" focusColor="#63ff7b" labelFloat="true" layoutX="26.0" layoutY="68.0" prefHeight="37.0" prefWidth="220.0" promptText="Medication ID:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="invoice_no11" editable="false" focusColor="#63ff7b" labelFloat="true" layoutX="27.0" layoutY="241.0" prefHeight="37.0" prefWidth="225.0" promptText="Invoice Number:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="generic_name11" editable="false" focusColor="#63ff7b" labelFloat="true" layoutX="28.0" layoutY="297.0" prefHeight="37.0" prefWidth="222.0" promptText="Generic Name:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="manufacturer11" editable="false" focusColor="#63ff7b" labelFloat="true" layoutX="28.0" layoutY="365.0" prefHeight="37.0" prefWidth="225.0" promptText="Manufacturer:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextArea fx:id="dosage11" editable="false" focusColor="#3eb23e" labelFloat="true" layoutX="24.0" layoutY="433.0" prefHeight="78.0" prefWidth="230.0" promptText="Dosage:">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextArea>
+                                                  <JFXTextField fx:id="form11" editable="false" focusColor="#63ff7b" labelFloat="true" layoutX="24.0" layoutY="547.0" prefHeight="25.0" prefWidth="232.0" promptText="Form:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="unit11" editable="false" focusColor="#63ff7b" labelFloat="true" layoutX="270.0" layoutY="68.0" prefHeight="25.0" prefWidth="222.0" promptText="Unit:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="NDC11" editable="false" focusColor="#63ff7b" labelFloat="true" layoutX="270.0" layoutY="141.0" prefHeight="37.0" prefWidth="222.0" promptText="NDC:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXDatePicker fx:id="expiring_date11" editable="false" layoutX="272.0" layoutY="222.0" overLay="true" prefHeight="25.0" prefWidth="219.0" promptText="Choose Date" showWeekNumbers="true" style="-fx-font-size: 16px;" />
+                                                  <JFXTextArea fx:id="storage_instruction11" editable="false" focusColor="#3eb23e" labelFloat="true" layoutX="272.0" layoutY="280.0" prefHeight="78.0" prefWidth="217.0" promptText="Storage instructions:">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextArea>
+                                                  <JFXTextField fx:id="price11" editable="false" focusColor="#63ff7b" labelFloat="true" layoutX="286.0" layoutY="397.0" prefHeight="25.0" prefWidth="232.0" promptText="Price:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <AnchorPane layoutX="563.0" layoutY="87.0" prefHeight="235.0" prefWidth="200.0" stylesheets="@../Styling/DashboardStyle.css">
+                                                      <styleClass>
+                                                          <String fx:value="shadow" />
+                                                          <String fx:value="white-bg" />
+                                                      </styleClass>
+                                                      <children>
+                                                          <ImageView fx:id="medicine_imageView11" fitHeight="221.0" fitWidth="188.0" layoutX="6.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+                                                      </children>
+                                                  </AnchorPane>
+                                                  <JFXButton fx:id="deleteMedBtn" layoutX="574.0" layoutY="358.0" onAction="#deleteMedication" prefHeight="33.0" prefWidth="180.0" styleClass="delete-btn" stylesheets="@../Styling/DashboardStyle.css" text="Delete medicine" />
+                                                  <Label layoutX="272.0" layoutY="203.0" prefWidth="105.0" text="Expiring Date:" />
+                                                  <TextField fx:id="searchMedicine1" layoutX="471.0" layoutY="14.0" prefHeight="35.0" prefWidth="222.0" promptText="Search Medicine name" styleClass="search" stylesheets="@../Styling/DashboardStyle.css" />
+                                                  <Button fx:id="searchBtn1" alignment="CENTER_RIGHT" layoutX="693.0" layoutY="14.0" mnemonicParsing="false" onAction="#searchToDelete" prefHeight="36.0" prefWidth="105.0" styleClass="clear-btn" stylesheets="@../Styling/DashboardStyle.css" text="Search">
+                                                      <graphic>
+                                                          <FontAwesomeIcon glyphName="SEARCH" size="1.5em" />
+                                                      </graphic>
+                                                  </Button>
+                                                  <FontAwesomeIcon glyphName="SEARCH" layoutX="479.0" layoutY="36.0" size="1.5em" />
+                                                  <Label layoutX="56.0" layoutY="9.0" prefHeight="45.0" prefWidth="401.0" style="-fx-alignment: center; -fx-background-color: gold; -fx-background-radius: 10px; -fx-font-size: 26px;" text="Deletion of Medicine Form" textFill="#389419" />
+                                                  <JFXTextField fx:id="stock_qty" editable="false" focusColor="#63ff7b" labelFloat="true" layoutX="279.0" layoutY="465.0" prefHeight="25.0" prefWidth="232.0" promptText="Stock quantity:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                    <JFXButton fx:id="deleteMedBtn1" layoutX="577.0" layoutY="415.0" onAction="#resetFields" prefHeight="33.0" prefWidth="180.0" styleClass="clear-btn" stylesheets="@../Styling/DashboardStyle.css" text="Reset" />
+                                    <JFXTextField fx:id="med_name11" editable="false" focusColor="#63ff7b" labelFloat="true" layoutX="24.0" layoutY="167.0" prefHeight="37.0" prefWidth="220.0" promptText="Medication Name:" unFocusColor="#108d17">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </JFXTextField>
+                                              </children>
+                                          </AnchorPane>
+                                      </children>
+                                  </AnchorPane>
+                                  <AnchorPane fx:id="view_medicine_form" prefHeight="652.0" prefWidth="852.0" stylesheets="@../Styling/DashboardStyle.css" visible="false">
+                                      <children>
+                                          <AnchorPane layoutX="16.0" layoutY="14.0" prefHeight="620.0" prefWidth="819.0" stylesheets="@../Styling/DashboardStyle.css">
+                                              <styleClass>
+                                                  <String fx:value="white-bg" />
+                                                  <String fx:value="shadow" />
+                                              </styleClass>
+                                              <children>
+                                                  <ScrollPane layoutX="12.0" layoutY="53.0" prefHeight="511.0" prefWidth="801.0" stylesheets="@../Styling/DashboardStyle.css">
+                                                      <content>
+                                                          <AnchorPane prefHeight="626.0" prefWidth="1101.0" stylesheets="@../Styling/DashboardStyle.css">
+                                                              <children>
+                                                                  <TableView fx:id="medicine_tableView" layoutX="14.0" layoutY="14.0" onMouseClicked="#selectMedication" prefHeight="484.0" prefWidth="1056.0" tableMenuButtonVisible="true">
+                                                                      <columns>
+                                                                          <TableColumn fx:id="med_col_id" prefWidth="75.0" text="Medicine ID" />
+                                                                          <TableColumn fx:id="med_col_name" prefWidth="75.0" text="Name" />
+                                                                          <TableColumn fx:id="med_col_invoice" prefWidth="75.0" text="Invoice" />
+                                                                          <TableColumn fx:id="med_col_generic" prefWidth="75.0" text="Generic" />
+                                                                          <TableColumn fx:id="med_col_manufacturer" prefWidth="75.0" text="Manufacturer" />
+                                                                          <TableColumn fx:id="med_col_dosage" prefWidth="75.0" text="Dosage" />
+                                                                          <TableColumn fx:id="med_col_form" prefWidth="75.0" text="Form" />
+                                                                          <TableColumn fx:id="med_col_unit" prefWidth="75.0" text="Unit" />
+                                                                          <TableColumn fx:id="med_col_NDC" prefWidth="75.0" text="NDC" />
+                                                                          <TableColumn fx:id="med_col_expiring_date" prefWidth="75.0" text="Exp. Date" />
+                                                                          <TableColumn fx:id="med_col_store_instruction" prefWidth="75.0" text="Stor. Instructions" />
+                                                                          <TableColumn fx:id="med_col_price" prefWidth="75.0" text="Price" />
+                                                                          <TableColumn fx:id="med_col_stock_qty" prefWidth="75.0" text="Stock Qty" />
+                                                                      </columns>
+                                                                      <columnResizePolicy>
+                                                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                                                      </columnResizePolicy>
+                                                                  </TableView>
+                                                              </children>
+                                                              <styleClass>
+                                                                  <String fx:value="shadow" />
+                                                                  <String fx:value="white-bg" />
+                                                              </styleClass>
+                                                          </AnchorPane>
+                                                      </content>
+                                                      <styleClass>
+                                                          <String fx:value="shadow" />
+                                                          <String fx:value="white-bg" />
+                                                      </styleClass>
+                                                  </ScrollPane>
+                                                  <TextField fx:id="search_medicine" layoutX="531.0" layoutY="11.0" prefHeight="31.0" prefWidth="268.0" promptText="Search here ..." styleClass="search" stylesheets="@../Styling/DashboardStyle.css">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </TextField>
+                                                  <FontAwesomeIcon glyphName="SEARCH" layoutX="538.0" layoutY="33.0" size="1.5em" />
+                                                  <Label layoutX="146.0" layoutY="2.0" prefWidth="295.0" style="-fx-border-color: green; -fx-border-radius: 10px; -fx-alignment: center; -fx-font-size: 30px; -fx-background-color: green; -fx-background-radius: 10px;" text="Available Medicines" textFill="WHITE" />
+                                              </children>
+                                          </AnchorPane>
+                                      </children>
+                                  </AnchorPane>
+                                  <AnchorPane fx:id="add_medicine_form" prefHeight="631.0" prefWidth="855.0" stylesheets="@../Styling/DashboardStyle.css" visible="false">
+                                      <children>
+                                          <AnchorPane layoutX="11.0" layoutY="7.0" prefHeight="624.0" prefWidth="838.0" style="-fx-border-color: indigo;" stylesheets="@../Styling/DashboardStyle.css">
+                                              <styleClass>
+                                                  <String fx:value="white-bg" />
+                                                  <String fx:value="shadow" />
+                                              </styleClass>
+                                              <children>
+                                                  <JFXTextField fx:id="med_name" focusColor="#63ff7b" labelFloat="true" layoutX="32.0" layoutY="140.0" prefHeight="37.0" prefWidth="220.0" promptText="Medication Name:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="invoice_no" focusColor="#63ff7b" labelFloat="true" layoutX="29.0" layoutY="226.0" prefHeight="37.0" prefWidth="225.0" promptText="Invoice Number:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="generic_name" focusColor="#63ff7b" labelFloat="true" layoutX="31.0" layoutY="314.0" prefHeight="37.0" prefWidth="222.0" promptText="Generic Name:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="manufacturer" focusColor="#63ff7b" labelFloat="true" layoutX="28.0" layoutY="379.0" prefHeight="37.0" prefWidth="225.0" promptText="Manufacturer:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextArea fx:id="dosage" focusColor="#3eb23e" labelFloat="true" layoutX="24.0" layoutY="447.0" prefHeight="78.0" prefWidth="230.0" promptText="Dosage:">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextArea>
+                                                  <JFXTextField fx:id="form" focusColor="#63ff7b" labelFloat="true" layoutX="24.0" layoutY="550.0" prefHeight="25.0" prefWidth="232.0" promptText="Form:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="unit" focusColor="#63ff7b" labelFloat="true" layoutX="270.0" layoutY="68.0" prefHeight="25.0" prefWidth="222.0" promptText="Unit:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXTextField fx:id="NDC" focusColor="#63ff7b" labelFloat="true" layoutX="270.0" layoutY="141.0" prefHeight="37.0" prefWidth="222.0" promptText="NDC:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <JFXDatePicker fx:id="expiring_date" editable="false" layoutX="272.0" layoutY="222.0" prefHeight="25.0" prefWidth="219.0" promptText="Choose Date" showWeekNumbers="true" style="-fx-font-size: 16px;" />
+                                                  <JFXTextArea fx:id="storage_instruction" focusColor="#3eb23e" labelFloat="true" layoutX="272.0" layoutY="280.0" prefHeight="78.0" prefWidth="217.0" promptText="Storage instructions:">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextArea>
+                                                  <JFXTextField fx:id="price" focusColor="#63ff7b" labelFloat="true" layoutX="272.0" layoutY="397.0" prefHeight="25.0" prefWidth="232.0" promptText="Price:" unFocusColor="#108d17">
+                                                      <font>
+                                                          <Font size="16.0" />
+                                                      </font>
+                                                  </JFXTextField>
+                                                  <AnchorPane layoutX="563.0" layoutY="87.0" prefHeight="235.0" prefWidth="200.0" stylesheets="@../Styling/DashboardStyle.css">
+                                                      <styleClass>
+                                                          <String fx:value="shadow" />
+                                                          <String fx:value="white-bg" />
+                                                      </styleClass>
+                                                      <children>
+                                                          <ImageView fx:id="medicine_imageView" fitHeight="221.0" fitWidth="188.0" layoutX="6.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" />
+                                                          <JFXButton fx:id="importBtn" layoutX="4.0" layoutY="203.0" onAction="#medicineImportImageBtn" prefHeight="33.0" prefWidth="192.0" text="import" />
+                                                      </children>
+                                                  </AnchorPane>
+                                                  <JFXButton fx:id="addMedBtn" layoutX="574.0" layoutY="358.0" onAction="#addMedication" prefHeight="33.0" prefWidth="180.0" styleClass="add-btn" stylesheets="@../Styling/DashboardStyle.css" text="Add medicine" />
+                                                  <Label layoutX="272.0" layoutY="203.0" prefWidth="105.0" text="Expiring Date:" />
+                                                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="223.0" layoutY="14.0" prefHeight="53.0" prefWidth="253.0" style="-fx-font-size: 36px; -fx-background-color: green; -fx-text-fill: #fff; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Add Medicine" textAlignment="CENTER">
+                                                      <font>
+                                                          <Font size="18.0" />
+                                                      </font>
+                                                  </Label>
+                                    <JFXTextField fx:id="qty" focusColor="#63ff7b" labelFloat="true" layoutX="272.0" layoutY="484.0" onKeyTyped="#numberOnly" prefHeight="25.0" prefWidth="232.0" promptText="Stock Quantity:" unFocusColor="#108d17">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXTextField fx:id="med_Id" focusColor="#63ff7b" labelFloat="true" layoutX="27.0" layoutY="69.0" prefHeight="37.0" prefWidth="220.0" promptText="Medication ID" unFocusColor="#108d17">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </JFXTextField>
+                                              </children>
+                                          </AnchorPane>
+                                      </children>
+                                  </AnchorPane>
+                        <AnchorPane fx:id="pharmacist_form" layoutX="9.0" layoutY="4.0" prefHeight="631.0" prefWidth="883.0" stylesheets="@../Styling/DashboardStyle.css">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                           </styleClass>
+                           <children>
+                              <AnchorPane layoutX="15.0" layoutY="16.0" prefHeight="237.0" prefWidth="851.0" style="-fx-border-color: indigo;" stylesheets="@../Styling/DashboardStyle.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <JFXTextField fx:id="phar_id" labelFloat="true" layoutX="14.0" layoutY="21.0" prefHeight="25.0" prefWidth="225.0" promptText="Pharmacist ID" />
+                                    <JFXTextField fx:id="phar_firstName" labelFloat="true" layoutX="13.0" layoutY="64.0" prefHeight="25.0" prefWidth="225.0" promptText="First Name" />
+                                    <JFXTextField fx:id="phar_surname" labelFloat="true" layoutX="12.0" layoutY="114.0" prefHeight="25.0" prefWidth="225.0" promptText="Surname" />
+                                    <JFXTextField fx:id="phar_licenseNumber" labelFloat="true" layoutX="13.0" layoutY="170.0" prefHeight="25.0" prefWidth="225.0" promptText="License Number" />
+                                    <JFXTextField fx:id="phar_phoneNumber" labelFloat="true" layoutX="267.0" layoutY="20.0" prefHeight="25.0" prefWidth="225.0" promptText="Phone Number" />
+                                    <JFXButton alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="629.0" layoutY="30.0" onAction="#registerPharmacist" styleClass="add-btn" stylesheets="@../Styling/DashboardStyle.css" text="Register">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="SAVE" size="1.5em" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="630.0" layoutY="77.0" onAction="#editPharmacist" prefHeight="33.0" prefWidth="106.0" styleClass="update-btn" stylesheets="@../Styling/DashboardStyle.css" text="Edit">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="EDIT" size="1.5em" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="628.0" layoutY="127.0" onAction="#deletePharmacist" prefHeight="33.0" prefWidth="111.0" styleClass="delete-btn" stylesheets="@../Styling/DashboardStyle.css" text="Delete">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="TRASH" size="1.5em" />
+                                       </graphic>
+                                    </JFXButton>
+                                    <JFXButton alignment="TOP_LEFT" graphicTextGap="10.0" layoutX="627.0" layoutY="179.0" onAction="#resetPharmacist" prefHeight="33.0" prefWidth="108.0" styleClass="clear-btn" stylesheets="@../Styling/DashboardStyle.css" text="Reset">
+                                       <graphic>
+                                          <FontAwesomeIcon fill="WHITE" glyphName="ERASER" size="1.5em" />
+                                       </graphic>
+                                    </JFXButton>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane layoutX="16.0" layoutY="268.0" prefHeight="355.0" prefWidth="851.0" style="-fx-border-color: indigo;" stylesheets="@../Styling/DashboardStyle.css">
+                                 <styleClass>
+                                    <String fx:value="white-bg" />
+                                    <String fx:value="shadow" />
+                                 </styleClass>
+                                 <children>
+                                    <TableView fx:id="pharmacist_tableView" layoutX="14.0" layoutY="14.0" onMouseClicked="#selectPharmacist" prefHeight="325.0" prefWidth="822.0" tableMenuButtonVisible="true">
+                                      <columns>
+                                        <TableColumn fx:id="phar_col_id" prefWidth="130.0" text="Pharmacist ID" />
+                                        <TableColumn fx:id="phar_col_firstName" prefWidth="105.0" text="First Name" />
+                                          <TableColumn fx:id="phar_col_surname" prefWidth="105.0" text="Surname" />
+                                          <TableColumn fx:id="phar_col_licenseNumber" prefWidth="105.0" text="License Number" />
+                                          <TableColumn fx:id="phar_col_phoneNumber" prefWidth="105.0" text="Phone Number" />
+                                      </columns>
+                                       <columnResizePolicy>
+                                          <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                       </columnResizePolicy>
+                                    </TableView>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+                    </center>
+               <left>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="667.0" prefWidth="225.0" style="-fx-background-color: indigo;" BorderPane.alignment="CENTER">
+                     <children>
+                        <JFXButton fx:id="admin_dashboard" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="12.0" layoutX="7.0" layoutY="357.0" onAction="#switchForms" prefHeight="33.0" prefWidth="205.0" styleClass="nav-btn" stylesheets="@../Styling/DashboardStyle.css" text="Dashboard" textAlignment="JUSTIFY" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="DASHBOARD" size="1.5em" textAlignment="RIGHT" />
+                           </graphic>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <MenuButton fx:id="admin_manageUsers" graphicTextGap="12.0" layoutX="8.0" layoutY="403.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="205.0" stylesheets="@../Styling/DashboardStyle.css" text="Manage Users" textFill="WHITE">
+                           <items>
+                              <MenuItem fx:id="admin_addUser" mnemonicParsing="false" onAction="#switchForms" text="Add User">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#032aab" glyphName="PLUS" size="1.5em" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem fx:id="admin_editUser" mnemonicParsing="false" onAction="#switchForms" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Edit User">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#a5cd09" glyphName="EDIT" size="1.5em" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem fx:id="admin_deleteUser" mnemonicParsing="false" onAction="#switchForms" text="Delete User">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#d32c2c" glyphName="TRASH" size="1.5em" />
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="USERS" size="1.5em" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </MenuButton>
+                        <MenuButton fx:id="admin_managerProdMed" graphicTextGap="12.0" layoutX="8.0" layoutY="452.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="209.0" stylesheets="@../Styling/DashboardStyle.css" text="Manage Products/Medicine">
+                           <items>
+                              <MenuItem fx:id="admin_addProdMed" mnemonicParsing="false" onAction="#switchForms" style="-fx-cursor: hand;" text="Add Product/Medicine">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#032aab" glyphName="PLUS" size="1.5em" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem fx:id="admin_editProdMed" mnemonicParsing="false" onAction="#switchForms" text="Edit Product/Medicine">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#a5cd09" glyphName="EDIT" size="1.5em" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem fx:id="admin_deleteProdMed" mnemonicParsing="false" onAction="#switchForms" text="Delete Product/Medicine">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#d32c2c" glyphName="TRASH" size="1.5em" />
+                                 </graphic>
+                              </MenuItem>
+                              <MenuItem fx:id="admin_viewMed" mnemonicParsing="false" onAction="#switchForms" text="View Medicine">
+                                 <graphic>
+                                    <FontAwesomeIcon fill="#c3c955" glyphName="LIST" size="1.5em" />
+                                 </graphic>
+                              </MenuItem>
+                           </items>
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="PLUS_CIRCLE" size="1.5em" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </MenuButton>
+                        <JFXButton fx:id="admin_changePassword" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="12.0" layoutX="9.0" layoutY="542.0" onAction="#switchForms" prefHeight="35.0" prefWidth="203.0" styleClass="nav-btn" stylesheets="@../Styling/DashboardStyle.css" text="Change Password" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="LOCK" size="1.5em" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="admin_logout" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="12.0" layoutX="5.0" layoutY="621.0" onAction="#logout" prefHeight="36.0" prefWidth="128.0" styleClass="logout-btn" stylesheets="@../Styling/DashboardStyle.css" text="Logout" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="2em" />
+                           </graphic>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <Label fx:id="admin_email" alignment="CENTER" layoutX="9.0" layoutY="252.0" prefHeight="32.0" prefWidth="210.0" style="-fx-border-color: #fff; -fx-border-radius: 10px; -fx-background-radius: 10px; -fx-text-fill: #fff;" text="abuobernard@gmail.com" textFill="#26a418">
+                           <font>
+                              <Font name="SansSerif Bold Italic" size="13.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="194.0" fitWidth="210.0" layoutX="8.0" layoutY="11.0" pickOnBounds="true" smooth="false" style="-fx-rotate: 360;">
+                           <image>
+                              <Image url="@../images/download.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" layoutX="8.0" layoutY="219.0" prefHeight="30.0" prefWidth="211.0" text="Welcome," textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <JFXButton fx:id="admin_managePharmacist" alignment="BASELINE_LEFT" buttonType="RAISED" graphicTextGap="12.0" layoutX="8.0" layoutY="495.0" onAction="#switchForms" prefHeight="35.0" prefWidth="206.0" styleClass="nav-btn" stylesheets="@../Styling/DashboardStyle.css" text="Manage Pharmacist" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="USER" size="1.5em" />
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </JFXButton>
+                     </children></AnchorPane>
+               </left>
+                </BorderPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>
